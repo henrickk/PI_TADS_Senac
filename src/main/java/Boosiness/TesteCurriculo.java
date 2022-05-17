@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Random;
+import static utils.ConsoleColors.*;
 
 public class TesteCurriculo {
 
@@ -61,7 +62,7 @@ public class TesteCurriculo {
 
     static String sorteadorCaracteristicas(){
 
-
+        String  caracteristicasMonstro=" ";
 
             ArrayList<String> listaCaracteristicas = new ArrayList<String>();
             listaCaracteristicas.add("Assustador");
@@ -74,13 +75,48 @@ public class TesteCurriculo {
 
             Collections.shuffle(listaCaracteristicas);
 
-            int maximo = listaCaracteristicas.size();
+            int maximo = 6;
 
             Random aleatorio = new Random();
 
-            int numRandom = aleatorio.nextInt(maximo);
+            int quantidade = aleatorio.nextInt(maximo) +1;
 
-          String  caracteristicasMonstro = listaCaracteristicas.get(numRandom);
+            switch (quantidade){
+                case 1:
+                    caracteristicasMonstro=listaCaracteristicas.get(0);
+                    break;
+                case 2:
+                    caracteristicasMonstro=listaCaracteristicas.get(0) + ",\n" +
+                    listaCaracteristicas.get(1);
+                    break;
+                case 3:
+                    caracteristicasMonstro=listaCaracteristicas.get(0) + ",\n" +
+                    listaCaracteristicas.get(1) + ",\n" +
+                    listaCaracteristicas.get(2);
+                    break;
+                case 4:
+                    caracteristicasMonstro=listaCaracteristicas.get(0) + ",\n" +
+                    listaCaracteristicas.get(1) + ",\n" +
+                    listaCaracteristicas.get(2) + ",\n" +
+                    listaCaracteristicas.get(3);
+                    break;
+                case 5:
+                    caracteristicasMonstro=listaCaracteristicas.get(0) + ",\n" +
+                    listaCaracteristicas.get(1) + ",\n" +
+                    listaCaracteristicas.get(2) + ",\n" +
+                    listaCaracteristicas.get(3) + ",\n" +
+                    listaCaracteristicas.get(4);
+                    break;
+                case 6:
+                    caracteristicasMonstro=listaCaracteristicas.get(0) + ",\n" +
+                    listaCaracteristicas.get(1) + ",\n" +
+                    listaCaracteristicas.get(2) + ",\n" +
+                    listaCaracteristicas.get(3) + ",\n" +
+                    listaCaracteristicas.get(4) + ",\n" +
+                    listaCaracteristicas.get(5);
+
+                    break;
+            }
 
         return caracteristicasMonstro;
     }
@@ -91,8 +127,12 @@ public class TesteCurriculo {
         String sobrenomeMonstro=sorteadorSobrenomes();
         String caracteristicasMonstro=sorteadorCaracteristicas();
 
-        System.out.println("Nome: " + nomeMonstro + " " + sobrenomeMonstro);
-        System.out.println("Características: " + caracteristicasMonstro);
+        coloredOutput("Nome: ", GREEN);
+        System.out.println(nomeMonstro + " " + sobrenomeMonstro);
+        coloredOutput("\n" + "Características: ", GREEN);
+        System.out.println(caracteristicasMonstro);
+
+
     }
 
 }
