@@ -127,9 +127,9 @@ public class TesteCurriculo {
         String sobrenomeMonstro=sorteadorSobrenomes();
         String caracteristicasMonstro=sorteadorCaracteristicas();
 
-        coloredOutput("Nome: ", GREEN);
+        coloredOutput("NOME: ", GREEN);
         System.out.println(nomeMonstro + " " + sobrenomeMonstro);
-        coloredOutput("\n" + "Características: ", GREEN);
+        coloredOutput("\n" + "CARACTERÍSTICAS: ", GREEN);
         System.out.println(caracteristicasMonstro);
 
 
