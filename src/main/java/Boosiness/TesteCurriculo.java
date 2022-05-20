@@ -13,21 +13,30 @@ public class TesteCurriculo {
     static String sorteadorNomes(){
 
         ArrayList<String>listaNomes=new ArrayList<String>();
-        listaNomes.add("Leonardo");
-        listaNomes.add("Julio");
-        listaNomes.add("Henrick");
-        listaNomes.add("Felipe");
-        listaNomes.add("Gustavo");
+        listaNomes.add("Gorgo");
+        listaNomes.add("Liant-me");
+        listaNomes.add("Raiiniolam");
+        listaNomes.add("Sas-anca");
+        listaNomes.add("Pas'phe");
+        listaNomes.add("Shaxshaxba");
+        listaNomes.add("Bimaphan");
+        listaNomes.add("Neus-le");
+        listaNomes.add("Si-ri");
+        listaNomes.add("Ball-dreal");
+        listaNomes.add("Vros'te");
+        listaNomes.add("Nurdrasbel");
+        listaNomes.add("Phebaronee");
+        listaNomes.add("Ethin");
+        listaNomes.add("Thimlarin");
+        listaNomes.add("Mur'le");
+        listaNomes.add("Flautrigre");
+        listaNomes.add("Gu-ga");
+        listaNomes.add("Siaslisgan");
+        listaNomes.add("Chimesiasbe");
 
         Collections.shuffle(listaNomes);
 
-        int maximo=listaNomes.size();
-
-        Random random=new Random();
-
-        int numRandom= random.nextInt(maximo);
-
-        String nomeMonstro=listaNomes.get(numRandom);
+        String nomeMonstro=listaNomes.get(0);
 
         return nomeMonstro;
 
@@ -38,27 +47,46 @@ public class TesteCurriculo {
     static String sorteadorSobrenomes(){
 
         ArrayList<String>listaSobrenomes=new ArrayList<String>();
-        listaSobrenomes.add("Fujimura");
-        listaSobrenomes.add("Honda");
-        listaSobrenomes.add("Adrian");
-        listaSobrenomes.add("Brenner");
-        listaSobrenomes.add("Gonzales");
+        listaSobrenomes.add("Deueray");
+        listaSobrenomes.add("Phasbemo");
+        listaSobrenomes.add("Abafor");
+        listaSobrenomes.add("Lasbra'te");
+        listaSobrenomes.add("Be-nex");
+        listaSobrenomes.add("Partoish");
+        listaSobrenomes.add("Je'cell");
+        listaSobrenomes.add("Nebusro");
+        listaSobrenomes.add("Cas-bra");
+        listaSobrenomes.add("Teday");
+        listaSobrenomes.add("Ha'lus");
+        listaSobrenomes.add("Haag-mur");
+        listaSobrenomes.add("Moprubad");
+        listaSobrenomes.add("Ormar");
+        listaSobrenomes.add("Riaxthusra");
+        listaSobrenomes.add("Nevausma");
+        listaSobrenomes.add("Tan'o");
+        listaSobrenomes.add("A'neus");
+        listaSobrenomes.add("Bau'fur");
+        listaSobrenomes.add("An-ga");
+        listaSobrenomes.add("Sulcuīx");
+        listaSobrenomes.add("Duquetga");
+        listaSobrenomes.add("Koshay");
+        listaSobrenomes.add("Tulbael");
+        listaSobrenomes.add("Silro");
+        listaSobrenomes.add("Anvortif");
+        listaSobrenomes.add("Jadzitl");
+        listaSobrenomes.add("Marabia");
+        listaSobrenomes.add("Curane");
+        listaSobrenomes.add("Libai");
 
         Collections.shuffle(listaSobrenomes);
 
-        int maximo=listaSobrenomes.size();
-
-        Random random=new Random();
-
-        int numRandom= random.nextInt(maximo);
-
-        String sobrenomeMonstro=listaSobrenomes.get(numRandom);
+        String sobrenomeMonstro=listaSobrenomes.get(0);
 
         return sobrenomeMonstro;
 
     }
 
-    //TODO adicionar mais característas e implementar sistema de puxar mais de uma
+    //TODO adicionar mais característas
 
     static String sorteadorCaracteristicas(){
 
