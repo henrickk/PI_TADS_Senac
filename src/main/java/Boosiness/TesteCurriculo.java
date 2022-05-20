@@ -180,7 +180,7 @@ public class TesteCurriculo {
         listaFormacao.add("Universidade Monstros");
         listaFormacao.add("Centro Universitário Void & Darkness");
         listaFormacao.add("Faculdade Estatual Sullyvan e Mike");
-        listaFormacao.add("Sustos e Macabros");
+        listaFormacao.add("Universidade Sustos e Pulos");
         listaFormacao.add("Centro de formação Escuridão Escura");
 
         Collections.shuffle(listaFormacao);

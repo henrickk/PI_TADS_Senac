@@ -1,12 +1,39 @@
 package Boosiness;
 
 import java.io.IOException;
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Random;
 
 import static Boosiness.Jogo.*;
 import static utils.ConsoleColors.*;
 
 public class Main {
     public static String caminhoSave = System.getProperty("java.io.tmpdir") + "save.json";
+
+    public static void enterContinue(){
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Pressione ENTER para continuar");
+        input.nextLine();
+    }
+
+    static void historia(){
+
+        String historia = "blablallalalasldlasdlalsdlalsdlalsdlasld";
+
+        for (int i = 0; i < historia.length(); i++) {
+
+            System.out.printf("%c", historia.charAt(i));
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+
+    }
     
     public static void main(String[] args) {        
         Jogo jogo = validaExistenciaSave();
@@ -40,6 +67,12 @@ public class Main {
         }
         System.out.print("\033[H\033[2J");
         System.out.flush();
+
+        enterContinue();
+
+        historia();
+
+
 
     }
     
