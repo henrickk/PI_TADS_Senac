@@ -2,7 +2,7 @@
 
 ## Integrantes: Henrick Adrian, Felipe Brenner, Julio Honda, Gustavo Gonzales, Leonardo Fujimura.
 
-###Resumo do Jogo
+### Resumo do Jogo
 O nosso jogo retrata trabalhar em um novo posto da imprensa que estava precisando de um supervisor.
 Seu deata uma distopia em que você, jogador, é sorteado para ver é contratar monstros para o seu setor,
 sempre analisando se os documentos apresentados são verídicos e estão de acordo com as regras da empresa.
