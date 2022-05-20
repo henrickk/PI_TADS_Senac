@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
 
-import static utils.ConsoleColors.*;
-
 public class TesteCurriculo {
 
     //TODO mudar e adicionar nomes
@@ -228,19 +226,19 @@ public class TesteCurriculo {
 
     public static void main(String[] args) {
 
-        coloredOutput("NOME: ", GREEN);
+        ConsoleColors.printColoredOutput("NOME: ", ConsoleColors.GREEN);
         System.out.println(sorteadorNomes() + " " + sorteadorSobrenomes());
 
-        coloredOutput("\n" + "IDADE: ", GREEN);
+        ConsoleColors.printColoredOutput("\n" + "IDADE: ", ConsoleColors.GREEN);
         System.out.println(sorteadorIdade() + " anos");
 
-        coloredOutput("\n" + "OBJETIVO: ", GREEN);
+        ConsoleColors.printColoredOutput("\n" + "OBJETIVO: ", ConsoleColors.GREEN);
         System.out.println(sorteadorObjetivos());
 
-        coloredOutput("\n" + "CARACTERÍSTICAS: ", GREEN);
+        ConsoleColors.printColoredOutput("\n" + "CARACTERÍSTICAS: ", ConsoleColors.GREEN);
         System.out.println(sorteadorCaracteristicas());
 
-        coloredOutput("\n" + "FORMAÇÃO ACADÊMICA: ", GREEN);
+        ConsoleColors.printColoredOutput("\n" + "FORMAÇÃO ACADÊMICA: ", ConsoleColors.GREEN);
         System.out.println(sorteadorUniversidades());
         System.out.println(sorteadorCurso() + " - " + nivelFormacao());
 
