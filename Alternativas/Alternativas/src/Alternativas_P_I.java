@@ -13,10 +13,10 @@ public class Alternativas_P_I {
 
 		boolean acertou = false;
 
-		// Peimeira questão (1)
+		// Peimeira questÃ£o (1)
 
 		do {
-			System.out.println("QUESTÃO_1");
+			System.out.println("QUESTÃƒO_1");
 			System.out.println("______________________________\n");// 30
 
 			System.out.println("a)Blablabla\n");
@@ -41,7 +41,7 @@ public class Alternativas_P_I {
 			case "A":
 
 				System.out.println("------------------------------\n");
-				System.out.println("Parabéns você acerou! Até a próxima semana!\n");
+				System.out.println("ParabÃ©ns vocÃª acerou! AtÃ© a prÃ³xima semana!\n");
 				acertou = true;
 				cont = cont + 1;
 				System.out.println("______________________________\n");// 30
@@ -60,25 +60,25 @@ public class Alternativas_P_I {
 			case "E":
 
 				System.out.println("\n------------------------------\n");// 30
-				System.out.println("Você errou! Tente novamente!");
+				System.out.println("VocÃª errou! Tente novamente!");
 				System.out.println("\n______________________________\n");// 30
 
 				break;
 			default:
-				System.out.println("Escolha inválida!");
+				System.out.println("Escolha invÃ¡lida!");
 			}
 		} while (!acertou && cont < 3);
 
 		if (acertou) {
-			System.out.println("Você acertou na " + cont + " tentativa!");
+			System.out.println("VocÃª acertou na " + cont + " tentativa!");
 		} else {
-			System.out.println("Você errou nas 3 chances!");
+			System.out.println("VocÃª errou nas 3 chances!");
 		}
 
-		/* Próxima história e em seguida a próxima questão (2) */
+		/* PrÃ³xima histÃ³ria e em seguida a prÃ³xima questÃ£o (2) */
 
 		do {
-			System.out.println("QUESTÃO_2");
+			System.out.println("QUESTÃ‚O_2");
 			System.out.println("______________________________\n");// 30
 
 			System.out.println("a)Blabla\n");
@@ -103,7 +103,7 @@ public class Alternativas_P_I {
 			case "A":
 
 				System.out.println("------------------------------\n");
-				System.out.println("Parabéns você acerou! Até a próxima semana!\n");
+				System.out.println("ParabÃ©ns vocÃª acerou! AtÃ© a prÃ³xima semana!\n");
 				acertou = true;
 				cont = cont + 1;
 				System.out.println("______________________________\n");// 30
@@ -122,26 +122,26 @@ public class Alternativas_P_I {
 			case "E":
 
 				System.out.println("\n------------------------------\n");// 30
-				System.out.println("Você errou! Tente novamente!");
+				System.out.println("VocÃª errou! Tente novamente!");
 				System.out.println("\n______________________________\n");// 30
 
 				break;
 			default:
-				System.out.println("Escolha inválida!");
+				System.out.println("Escolha invÃ¡lida!");
 			}
 		} while (!acertou && cont < 3);
 
 		if (acertou) {
-			System.out.println("Você acertou na " + cont + " tentativa!");
+			System.out.println("VocÃª acertou na " + cont + " tentativa!");
 		} else {
-			System.out.println("Você errou nas 3 chances!");
+			System.out.println("VocÃª errou nas 3 chances!");
 		}
 
-		/* Próxima história e em seguida a próxima questão (3) BOSS(1) */
+		/* PrÃ³xima histÃ³ria e em seguida a prÃ³xima questÃ£o (3) BOSS(1) */
 
 		List quest = new ArrayList();
 
-		quest.add("BLABLA");// Questão correta
+		quest.add("BLABLA");// QuestÃ£o correta
 		quest.add("BLABLABLA");
 		quest.add("BLABLBLA");
 		quest.add("BLABLABL");
@@ -149,7 +149,7 @@ public class Alternativas_P_I {
 		do {
 			Collections.shuffle(quest);
 
-			System.out.println("Questão_3 BOSS(1)");
+			System.out.println("QuestÃ¢o_3 BOSS(1)");
 			System.out.println("a) " + quest.get(0));
 			System.out.println("b) " + quest.get(1));
 			System.out.println("c) " + quest.get(2));
@@ -199,13 +199,15 @@ public class Alternativas_P_I {
 				}
 				break;
 			default:
-				System.out.println("Escolha inválida!");
+				System.out.println("Escolha invÃ¡lida!");
 			}
 
 		} while (!acertou);
 
 	}
 
+	//TODO Adicionar boss com Randon futuramente !!!
+
 }
 
-//Adicionar boss com Randon futuramente !!!
+
