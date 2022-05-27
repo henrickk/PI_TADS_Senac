@@ -5,6 +5,16 @@ import java.util.*;
 
 public class Main {
 
+    /*
+    ============================================================================
+              ___   _                           _
+             | __| | |  _  _  __ __  ___     _ | |  ___   __ _   ___
+             | _|  | | | || | \ \ / / _ \   | || | / _ \ / _` | / _ \
+             |_|   |_|  \_,_| /_\_\ \___/    \__/  \___/ \__, | \___/
+                                                         |___/
+    ============================================================================
+     */
+
     public static void main(String[] args) {
         //TODO validar se este eh o melhor lugar para este cara ficar
         printStringWithIntervalsPerChar(
@@ -12,19 +22,19 @@ public class Main {
                         "██   ██ ██      ████  ████       ██    ██ ██ ████   ██ ██   ██ ██    ██\n" +
                         "██████  █████   ██ ████ ██ █████ ██    ██ ██ ██ ██  ██ ██   ██ ██    ██\n" +
                         "██   ██ ██      ██  ██  ██        ██  ██  ██ ██  ██ ██ ██   ██ ██    ██\n" +
-                        "██████  ███████ ██      ██         ████   ██ ██   ████ ██████   ██████", 5);
+                        "██████  ███████ ██      ██         ████   ██ ██   ████ ██████   ██████", 0);
         printStringWithIntervalsPerChar(
                 "\n\n\t\t\t\t\t\t █████   ██████\n" +
                         "\t\t\t\t\t\t██   ██ ██    ██\n" +
                         "\t\t\t\t\t\t███████ ██    ██\n" +
                         "\t\t\t\t\t\t██   ██ ██    ██\n" +
-                        "\t\t\t\t\t\t██   ██  ██████", 5);
+                        "\t\t\t\t\t\t██   ██  ██████", 0);
         printColoredOutput(
                 "\n\n██████   ██████   ██████  ███████ ██ ███    ██ ███████ ███████ ███████ \n" +
                         "██   ██ ██    ██ ██    ██ ██      ██ ████   ██ ██      ██      ██      \n" +
                         "██████  ██    ██ ██    ██ ███████ ██ ██ ██  ██ █████   ███████ ███████ \n" +
                         "██   ██ ██    ██ ██    ██      ██ ██ ██  ██ ██ ██           ██      ██ \n" +
-                        "██████   ██████   ██████  ███████ ██ ██   ████ ███████ ███████ ███████", RED);
+                        "██████   ██████   ██████  ███████ ██ ██   ████ ███████ ███████ ███████ \n", RED_BOLD_BRIGHT);
 
         Scanner input = new Scanner(System.in);
         System.out.println("\nPressione ENTER para continuar");
@@ -35,22 +45,89 @@ public class Main {
         if (escolha == 4) {
             System.out.println("bye");
         } else if (escolha == 2) {
-
-
-
         }
-
-
     }
 
+    /*
+    ============================================================================
+                                 _
+                              _ | |  ___   __ _   ___
+                             | || | / _ \ / _` | / _ \
+                              \__/  \___/ \__, | \___/
+                                          |___/
+     ============================================================================
+     */
 
+    static int menuSelecao() {
+        boolean sair = false;
+        int opcaoEscolhida;
 
-    public static void printColoredOutput(String text, String fontColor, String backgroundColor) {
-        System.out.println(backgroundColor + fontColor + text + RESET);
+        do {
+            System.out.println("Digite o número de 1 a 4 para escolher uma das opções:");
+            printColoredOutput("1) ", RED_BOLD_BRIGHT);
+            System.out.println("Instruções");
+            printColoredOutput("2) ", RED_BOLD_BRIGHT);
+            System.out.println("Jogar");
+            printColoredOutput("3) ", RED_BOLD_BRIGHT);
+            System.out.println("Creditos");
+            printColoredOutput("4) ", RED_BOLD_BRIGHT);
+            System.out.println("Sair\n");
+
+            printColoredOutput("Digite: ", WHITE_BOLD);
+            Scanner entrada = new Scanner(System.in);
+            opcaoEscolhida = entrada.nextInt();
+
+            switch (opcaoEscolhida) {
+                case 1:
+                    System.out.println("\n=================================================\n" +
+                            "Instruções:\n" +
+                            "Avalie currículos e avance as semanas pra ser promovido.\n" +
+                            "=================================================\n");
+
+                    break;
+                case 2:
+                    System.out.println("\n=================================================\n" +
+                            "Carregando: ");
+                    printStringWithIntervalsPerCharWithColor("██████████████████████████████████████████████████████████████████", RED_BOLD_BRIGHT);
+
+                    sair = true;
+                    break;
+                case 3:
+                    System.out.println("\n=================================================\n" +
+                            "Créditos: \n" +
+                            "Jogo criador por: \n\n" +
+                            "Felipe Brenner\n" +
+                            "Gustavo Gonzalez\n" +
+                            "Henrick Adrian\n" +
+                            "Julio Honda\n" +
+                            "Leonardo Fujimura\n" +
+                            "=================================================\n");
+
+                    break;
+                case 4:
+                    System.out.println("\n=================================================\n" +
+                            "Sair\n" +
+                            "okay....\n" +
+                            "=================================================\n");
+
+                    sair = true;
+                    break;
+                default:
+                    printColoredOutput("Opção inválida", RED_BOLD_BRIGHT);
+            }
+        } while (!sair);
+
+        return opcaoEscolhida;
     }
-    public static void printColoredOutput(String text, String fontColor) {
-        System.out.println(fontColor + text + RESET);
-    }
+
+    /*
+    ============================================================================
+                   ___                      _               _
+                  / __|  _  _   _ _   _ _  (_)  __   _  _  | |  ___
+                 | (__  | || | | '_| | '_| | | / _| | || | | | / _ \
+                  \___|  \_,_| |_|   |_|   |_| \__|  \_,_| |_| \___/
+     ============================================================================
+     */
 
     //TODO mudar e adicionar nomes
     static String sorteadorNomes() {
@@ -174,75 +251,20 @@ public class Main {
         System.out.println(sorteadorCurso() + " - " + sorteadorNivelFormacao());
     }
 
-    static int menuSelecao() {
-        int menu;
-        boolean sair = false;
+    /*
+    ============================================================================
+                              ___         _          _
+                             | _ \  _ _  (_)  _ _   | |_
+                             |  _/ | '_| | | | ' \  |  _|
+                             |_|   |_|   |_| |_||_|  \__|
+     ============================================================================
+     */
 
-        Scanner entrada = new Scanner(System.in);
-
-        do {
-            System.out.println("Digite o número de 1 a 4 para escolher uma das opções: ");
-
-            System.out.println("1) Instruções");
-
-            System.out.println("2) Jogar");
-
-            System.out.println("3) Créditos");
-
-            System.out.println("4) Sair");
-
-            System.out.print("Digite: ");
-
-            menu = entrada.nextInt();
-
-            switch (menu) {
-                case 1:
-                    System.out.println("=================================================");
-                    System.out.println("Instruções:\n ");
-
-                    System.out.println("Avalie currículos e avance as semanas pra ser promovido.");
-
-                    System.out.println("=================================================");
-
-                    break;
-                case 2:
-
-
-
-                    System.out.println("=================================================");
-                    System.out.print("Carregando jogo: ");
-                    printStringWithIntervalsPerChar("██████████████████████████████████████████████████████████████████");
-                    sair = true;
-
-                    break;
-                case 3:
-                    System.out.println("=================================================");
-                    System.out.println("Créditos:");
-
-                    System.out.println("Jogo criador por: \n\n" +
-                            "Felipe Brenner\n" +
-                            "Gustavo Gonzalez\n" +
-                            "Henrick Adrian\n" +
-                            "Julio Honda\n" +
-                            "Leonardo Fujimura\n");
-                    System.out.println("=================================================");
-                    break;
-                case 4:
-                    System.out.println("=================================================");
-                    System.out.println("Sair");
-                    System.out.println("okay....");
-                    System.out.println("=================================================");
-                    sair = true;
-
-                    break;
-                default:
-                    System.out.println("Opção inválida");
-            }
-
-        } while (!sair);
-
-        return menu;
-
+    public static void printColoredOutput(String text, String fontColor, String backgroundColor) {
+        System.out.println(backgroundColor + fontColor + text + RESET);
+    }
+    public static void printColoredOutput(String text, String fontColor) {
+        System.out.print(fontColor + text + RESET);
     }
 
     static void printStringWithIntervalsPerChar(String string){
@@ -259,12 +281,23 @@ public class Main {
     }
 
     static void printStringWithIntervalsPerChar(String string, int intervaloMiliSegundos){
-        // dahora, mt bom
         for (int i = 0; i < string.length(); i++) {
 
             System.out.print(string.charAt(i));
             try {
                 Thread.sleep(intervaloMiliSegundos);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+
+    static void printStringWithIntervalsPerCharWithColor(String string, String fontColor){
+        for (int i = 0; i < string.length(); i++) {
+
+            printColoredOutput(String.valueOf(string.charAt(i)), fontColor);
+            try {
+                Thread.sleep(35);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
