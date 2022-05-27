@@ -15,80 +15,13 @@ import java.util.*;
 
 public class Main {
 
-    public static String caminhoSave = System.getProperty("java.io.tmpdir") + "save.json";
+            /*========================================
+     ========= Dados dos currículos  =========
+     =========================================*/
 
-    // Nao acho que vale a pena fazer wrapper nesse projeto pequeno, Explicito > Implicito.
-    public static void enterContinue(){
+    //TODO mudar e adicionar nomes
 
-        Scanner input = new Scanner(System.in);
-        System.out.println("Pressione ENTER para continuar");
-        input.nextLine();
-    }
-
-    static void printStringWithIntervalsPerChar(String string){
-        // dahora, mt bom
-        for (int i = 0; i < string.length(); i++) {
-
-            System.out.print(string.charAt(i));
-            try {
-                Thread.sleep(35);
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-            }
-        }
-    }
-    
-    public static void main(String[] args) {        
-        Jogo jogo = Jogo.validaExistenciaSave();
-
-        //TODO validar se este eh o melhor lugar para este cara ficar
-        ConsoleColors.printColoredOutput("\n" +
-        "\t\t  ___                      __   __  _             _       \n" +
-        "\t\t | _ )  ___   _ __    ___  \\ \\ / / (_)  _ _    __| |  ___ \n" +
-        "\t\t | _ \\ / -_) | '  \\  |___|  \\ V /  | | | ' \\  / _` | / _ \\\n" +
-        "\t\t |___/ \\___| |_|_|_|         \\_/   |_| |_||_| \\__,_| \\___/\n", ConsoleColors.BLUE);
-        ConsoleColors.printColoredOutput("\n" +
-                "\t\t\t\t\t\t    _         \n" +
-                "\t\t\t\t\t\t   /_\\    ___ \n" +
-                "\t\t\t\t\t\t  / _ \\  / _ \\\n" +
-                "\t\t\t\t\t\t /_/ \\_\\ \\___/\n", ConsoleColors.BLUE);
-        ConsoleColors.printColoredOutput("\n" +
-                "__________                         .__                                 \n" +
-                "\\______   \\  ____    ____    ______|__|  ____    ____    ______  ______\n" +
-                " |    |  _/ /  _ \\  /  _ \\  /  ___/|  | /    \\ _/ __ \\  /  ___/ /  ___/\n" +
-                " |    |   \\(  <_> )(  <_> ) \\___ \\ |  ||   |  \\\\  ___/  \\___ \\  \\___ \\ \n" +
-                " |______  / \\____/  \\____/ /____  >|__||___|  / \\___  >/____  >/____  >\n" +
-                "        \\/                      \\/          \\/      \\/      \\/      \\/ \n", ConsoleColors.RED_BOLD_BRIGHT);
-
-        Curriculo curriculo = new Curriculo();
-        System.out.println(curriculo);
-    }
-}
-
-class Curriculo {
-
-    public String nome;
-    public String sobrenome;
-    public int idade;
-    public String objetivo;
-    public String caracteristicas;
-    public String universidade;
-    public String curso;
-    public String nivelFormacao;
-
-    //Construtor
-    public Curriculo() {
-        this.nome = sorteadorNomes();
-        this.sobrenome = sorteadorSobrenomes();
-        this.idade = sorteadorIdade();
-        this.objetivo = sorteadorObjetivos();
-        this.caracteristicas = sorteadorCaracteristicas();
-        this.universidade = sorteadorUniversidades();
-        this.curso = sorteadorCurso();
-        this.nivelFormacao = sorteadorNivelFormacao();
-    }
-
-    public String sorteadorNomes() {
+    static String sorteadorNomes() {
 
         ArrayList<String> listaNomes = new ArrayList<>();
         listaNomes.add("Gorgo");
@@ -118,7 +51,9 @@ class Curriculo {
 
     }
 
-    public String sorteadorSobrenomes() {
+    //TODO mudar e adicionar sobrenomes
+
+    static String sorteadorSobrenomes() {
 
         ArrayList<String> listaSobrenomes = new ArrayList<>();
         listaSobrenomes.add("Deueray");
@@ -158,7 +93,9 @@ class Curriculo {
 
     }
 
-    public int sorteadorIdade() {
+    // sorteador de idades
+
+    static int sorteadorIdade() {
         int max = 450, min = 18;
 
         Random num = new Random();
@@ -167,7 +104,9 @@ class Curriculo {
 
     }
 
-    public String sorteadorObjetivos() {
+    //TODO adicionar mais objetivos
+
+    static String sorteadorObjetivos() {
         ArrayList<String> listaObjetivos = new ArrayList<>();
         listaObjetivos.add("Aprimorar meus conhecimentos de susto e assustar o máximo de pessoas que eu pudar para ajudar no crescimento da empresa.");
         listaObjetivos.add("Focar no meu crescimento pessoal e fazer de tudo para me tornar o chefe.");
@@ -181,31 +120,72 @@ class Curriculo {
         return listaObjetivos.get(0);
     }
 
-    public String sorteadorCaracteristicas() {
+    //TODO adicionar mais característas
+
+    static String sorteadorCaracteristicas() {
+
+        String caracteristicasMonstro = " ";
 
         ArrayList<String> listaCaracteristicas = new ArrayList<>();
         listaCaracteristicas.add("Assustador");
         listaCaracteristicas.add("Grande");
         listaCaracteristicas.add("Inteligente");
-        listaCaracteristicas.add("Timido");
+        listaCaracteristicas.add("Tímido");
         listaCaracteristicas.add("Estressado");
         listaCaracteristicas.add("Assustado");
         listaCaracteristicas.add("Fofo");
+
         Collections.shuffle(listaCaracteristicas);
 
-        int quantidadeMaximaCaracteristicas = 6;
-        Random aleatorio = new Random();
-        int quantidadeCaracteristicas = aleatorio.nextInt(quantidadeMaximaCaracteristicas) + 1;
+        int maximo = 6;
 
-        String caracteristicasMonstro = " ";
-        for(int i = 0; i <= quantidadeCaracteristicas; i++) {
-            caracteristicasMonstro = caracteristicasMonstro + "-" + listaCaracteristicas.get(i) + ",\n";
+        Random aleatorio = new Random();
+
+        int quantidade = aleatorio.nextInt(maximo) + 1;
+
+        switch (quantidade) {
+            case 1:
+                caracteristicasMonstro = listaCaracteristicas.get(0);
+                break;
+            case 2:
+                caracteristicasMonstro = listaCaracteristicas.get(0) + ",\n" +
+                        listaCaracteristicas.get(1);
+                break;
+            case 3:
+                caracteristicasMonstro = listaCaracteristicas.get(0) + ",\n" +
+                        listaCaracteristicas.get(1) + ",\n" +
+                        listaCaracteristicas.get(2);
+                break;
+            case 4:
+                caracteristicasMonstro = listaCaracteristicas.get(0) + ",\n" +
+                        listaCaracteristicas.get(1) + ",\n" +
+                        listaCaracteristicas.get(2) + ",\n" +
+                        listaCaracteristicas.get(3);
+                break;
+            case 5:
+                caracteristicasMonstro = listaCaracteristicas.get(0) + ",\n" +
+                        listaCaracteristicas.get(1) + ",\n" +
+                        listaCaracteristicas.get(2) + ",\n" +
+                        listaCaracteristicas.get(3) + ",\n" +
+                        listaCaracteristicas.get(4);
+                break;
+            case 6:
+                caracteristicasMonstro = listaCaracteristicas.get(0) + ",\n" +
+                        listaCaracteristicas.get(1) + ",\n" +
+                        listaCaracteristicas.get(2) + ",\n" +
+                        listaCaracteristicas.get(3) + ",\n" +
+                        listaCaracteristicas.get(4) + ",\n" +
+                        listaCaracteristicas.get(5);
+
+                break;
         }
 
         return caracteristicasMonstro;
     }
 
-    public String sorteadorUniversidades() {
+    //TODO adicionar mais universidades
+
+    static String sorteadorUniversidades() {
         ArrayList<String> listaFormacao = new ArrayList<>();
         listaFormacao.add("Universidade Sustos");
         listaFormacao.add("Universidade Monstros");
@@ -219,7 +199,9 @@ class Curriculo {
         return listaFormacao.get(0);
     }
 
-    public String sorteadorCurso() {
+    //TODO adicionar mais cursos
+
+    static String sorteadorCurso() {
         ArrayList<String> listaCurso = new ArrayList<>();
         listaCurso.add("Administração");
         listaCurso.add("Ciências do susto");
@@ -237,7 +219,9 @@ class Curriculo {
         return listaCurso.get(0);
     }
 
-    public String sorteadorNivelFormacao() {
+    // sorteador de nível de formação
+
+    static String nivelFormacao() {
         ArrayList<String> cursando = new ArrayList<>();
         cursando.add("Cursando 1º Semestre");
         cursando.add("Cursando 2º Semestre");
@@ -253,15 +237,82 @@ class Curriculo {
         return cursando.get(0);
     }
 
-    @Override
-    public String toString() {
-        return "Nome: " + this.nome + " " + this.sobrenome + "\n" +
-               "Idade: " + this.idade + "\n" +
-               "Objetivo: " + this.objetivo + "\n" +
-               "Caracteristicas: " + this.caracteristicas + "\n" +
-               "Universidade: " + this.universidade + "\n" +
-               "Curso: " + this.curso + "\n" +
-               "Nivel de Formação: " + this.nivelFormacao;
+        /*================================================
+         =================================================
+         ============ geração dos currículos =============
+         =================================================
+         =================================================
+     */
+
+    static void geradorDeCurrículo() {
+
+        ConsoleColors.printColoredOutput("NOME: ", ConsoleColors.GREEN);
+        System.out.println(sorteadorNomes() + " " + sorteadorSobrenomes());
+
+        ConsoleColors.printColoredOutput("\n" + "IDADE: ", ConsoleColors.GREEN);
+        System.out.println(sorteadorIdade() + " anos");
+
+        ConsoleColors.printColoredOutput("\n" + "OBJETIVO: ", ConsoleColors.GREEN);
+        System.out.println(sorteadorObjetivos());
+
+        ConsoleColors.printColoredOutput("\n" + "CARACTERÍSTICAS: ", ConsoleColors.GREEN);
+        System.out.println(sorteadorCaracteristicas());
+
+        ConsoleColors.printColoredOutput("\n" + "FORMAÇÃO ACADÊMICA: ", ConsoleColors.GREEN);
+        System.out.println(sorteadorUniversidades());
+        System.out.println(sorteadorCurso() + " - " + nivelFormacao());
+
+    }
+
+    /*   =================================================
+         =================================================
+         ========= Final Geração dos currículos ==========
+         =================================================
+         =================================================
+     */
+
+    public static String caminhoSave = System.getProperty("java.io.tmpdir") + "save.json";
+
+    // Nao acho que vale a pena fazer wrapper nesse projeto pequeno, Explicito > Implicito.
+    public static void enterContinue(){
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("Pressione ENTER para continuar");
+        input.nextLine();
+    }
+
+    static void printStringWithIntervalsPerChar(String string){
+        // dahora, mt bom
+        for (int i = 0; i < string.length(); i++) {
+
+            System.out.print(string.charAt(i));
+            try {
+                Thread.sleep(35);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+    
+    public static void main(String[] args) {        
+        Jogo jogo = Jogo.validaExistenciaSave();
+
+        //TODO validar se este eh o melhor lugar para este cara ficar
+        printStringWithIntervalsPerChar("██████  ███████ ███    ███       ██    ██ ██ ███    ██ ██████   ██████\n" +
+                "██   ██ ██      ████  ████       ██    ██ ██ ████   ██ ██   ██ ██    ██\n" +
+                "██████  █████   ██ ████ ██ █████ ██    ██ ██ ██ ██  ██ ██   ██ ██    ██\n" +
+                "██   ██ ██      ██  ██  ██        ██  ██  ██ ██  ██ ██ ██   ██ ██    ██\n" +
+                "██████  ███████ ██      ██         ████   ██ ██   ████ ██████   ██████");
+        printStringWithIntervalsPerChar("\n\n\t\t\t\t\t\t █████   ██████\n" +
+                "\t\t\t\t\t\t██   ██ ██    ██\n" +
+                        "\t\t\t\t\t\t███████ ██    ██\n" +
+                        "\t\t\t\t\t\t██   ██ ██    ██\n" +
+                        "\t\t\t\t\t\t██   ██  ██████");
+        ConsoleColors.printColoredOutput("\n\n██████   ██████   ██████  ███████ ██ ███    ██ ███████ ███████ ███████ \n" +
+                "██   ██ ██    ██ ██    ██ ██      ██ ████   ██ ██      ██      ██      \n" +
+                "██████  ██    ██ ██    ██ ███████ ██ ██ ██  ██ █████   ███████ ███████ \n" +
+                "██   ██ ██    ██ ██    ██      ██ ██ ██  ██ ██ ██           ██      ██ \n" +
+                "██████   ██████   ██████  ███████ ██ ██   ████ ███████ ███████ ███████",ConsoleColors.RED);
     }
 }
 
