@@ -2,23 +2,26 @@ package Boosiness;
 
 //Bibliotecas gerais
 import java.util.*;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+
+
         //TODO validar se este eh o melhor lugar para este cara ficar
         printStringWithIntervalsPerChar(
                 "██████  ███████ ███    ███       ██    ██ ██ ███    ██ ██████   ██████\n" +
                         "██   ██ ██      ████  ████       ██    ██ ██ ████   ██ ██   ██ ██    ██\n" +
                         "██████  █████   ██ ████ ██ █████ ██    ██ ██ ██ ██  ██ ██   ██ ██    ██\n" +
                         "██   ██ ██      ██  ██  ██        ██  ██  ██ ██  ██ ██ ██   ██ ██    ██\n" +
-                        "██████  ███████ ██      ██         ████   ██ ██   ████ ██████   ██████", 5);
+                        "██████  ███████ ██      ██         ████   ██ ██   ████ ██████   ██████");
         printStringWithIntervalsPerChar(
                 "\n\n\t\t\t\t\t\t █████   ██████\n" +
                         "\t\t\t\t\t\t██   ██ ██    ██\n" +
                         "\t\t\t\t\t\t███████ ██    ██\n" +
                         "\t\t\t\t\t\t██   ██ ██    ██\n" +
-                        "\t\t\t\t\t\t██   ██  ██████", 5);
+                        "\t\t\t\t\t\t██   ██  ██████");
         printColoredOutput(
                 "\n\n██████   ██████   ██████  ███████ ██ ███    ██ ███████ ███████ ███████ \n" +
                         "██   ██ ██    ██ ██    ██ ██      ██ ████   ██ ██      ██      ██      \n" +
@@ -26,15 +29,52 @@ public class Main {
                         "██   ██ ██    ██ ██    ██      ██ ██ ██  ██ ██ ██           ██      ██ \n" +
                         "██████   ██████   ██████  ███████ ██ ██   ████ ███████ ███████ ███████", RED);
 
-        Scanner input = new Scanner(System.in);
+        Scanner entrada = new Scanner(System.in);
         System.out.println("\nPressione ENTER para continuar");
-        input.nextLine();
+        entrada.nextLine();
 
         int escolha = menuSelecao();
 
         if (escolha == 4) {
             System.out.println("bye");
         } else if (escolha == 2) {
+
+            System.out.println("\nPressione ENTER para continuar");
+            entrada.nextLine();
+
+            printStringWithIntervalsPerChar("\nAno: 4078" +
+                    "\nCidade: Lugar Nenhum" +
+                    "\nEstado: São Void" +
+                    "\nPaís: Terra de Ningúem" +
+                    "\n\n\tNo Mundo atual, os monstros são os seres com a classe mais baixa da sociedade, mas o que\n" +
+                    "acontece quando alguns deles começam um negócio? Isto aconteceu! Agora esses monstros dominam as\n" +
+                    "maiores empresas do mundo, sempre dando um jeito de ganhar dinheiro com diversas novas formas de\n" +
+                    "negócios, desde estabelecimento, de magias empacotadas e transmutações instantâneas, a que mais\n" +
+                    "faz sucesso por ser uma energia renovável, a Biofobia, também conhecida mundialmente como\n" +
+                    "Phobia Energy!\n" +
+                    "\tEssa energia é produzida através do susto genuíno das humanos ou monstros, mas uma coisa\n" +
+                    "é certa: as crianças são aquelas que mais exalam essa energia!\n" +
+                    "\n\tA maior fabricante de Biofobia de Terra de Niguém teve que demitir sua antiga gerente da parte de\n" +
+                    "contratações, Martha, por conta de uma excesso de raiva, que acabou fazendo com que a empresa\n" +
+                    "perdesse diversos patrocinadores.\n" +
+                    "\tMeses depois, um demônio do R.M. (Recursos Monstros), por ordens do dono da empresa, contrata um\n" +
+                    "novo estagiário para ocupar o antigo lugar de Martha.", 1);
+
+            printStringWithIntervalsPerChar("\n\n\n Você chega na empresa e logo é parado por uma secretária.\n\n");
+
+            caixaDialogoAutomatico("Secretária", "Ei! Pare aí! O que veio fazer aqui?! Quem é você?!");
+            printStringWithIntervalsPerChar("Informe seu nome:");
+            String nomeJogador=entrada.next();
+
+            caixaDialogoAutomatico("Secretária", "Tá, mas... " + nomeJogador + " de quê? Você não tem sobrenome não??");
+
+            printStringWithIntervalsPerChar("Informe seu sobrenome:");
+            String sobrenomeJogador=entrada.next();
+
+            caixaDialogoAutomatico("Secretária", "Oh! Mil perdões! Eu não sabia que era o novo funcionário daqui...");
+
+
+
 
 
 
@@ -50,6 +90,14 @@ public class Main {
     }
     public static void printColoredOutput(String text, String fontColor) {
         System.out.println(fontColor + text + RESET);
+    }
+
+    static void caixaDialogoAutomatico(String nomeFalante, String fala){
+        String topCaixaDialogo = "---------------------------------------------------------------------------------------------------\n";
+        String bottomCaixaDialogo = "___________________________________________________________________________________________________\n";
+        System.out.println(nomeFalante + ":\n" + topCaixaDialogo);
+        printStringWithIntervalsPerChar("\t" + fala + "\n",100);
+        System.out.println(bottomCaixaDialogo);
     }
 
     //TODO mudar e adicionar nomes
@@ -212,6 +260,7 @@ public class Main {
                     System.out.println("=================================================");
                     System.out.print("Carregando jogo: ");
                     printStringWithIntervalsPerChar("██████████████████████████████████████████████████████████████████");
+                    System.out.println("\n Conclúido!\n");
                     sair = true;
 
                     break;
