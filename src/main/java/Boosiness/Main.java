@@ -25,7 +25,25 @@ public class Main {
                         "██████  ██    ██ ██    ██ ███████ ██ ██ ██  ██ █████   ███████ ███████ \n" +
                         "██   ██ ██    ██ ██    ██      ██ ██ ██  ██ ██ ██           ██      ██ \n" +
                         "██████   ██████   ██████  ███████ ██ ██   ████ ███████ ███████ ███████", RED);
+
+        Scanner input = new Scanner(System.in);
+        System.out.println("\nPressione ENTER para continuar");
+        input.nextLine();
+
+        int escolha = menuSelecao();
+
+        if (escolha == 4) {
+            System.out.println("bye");
+        } else if (escolha == 2) {
+
+
+
+        }
+
+
     }
+
+
 
     public static void printColoredOutput(String text, String fontColor, String backgroundColor) {
         System.out.println(backgroundColor + fontColor + text + RESET);
@@ -156,7 +174,76 @@ public class Main {
         System.out.println(sorteadorCurso() + " - " + sorteadorNivelFormacao());
     }
 
-    public static String caminhoSave = System.getProperty("java.io.tmpdir") + "save.json";
+    static int menuSelecao() {
+        int menu;
+        boolean sair = false;
+
+        Scanner entrada = new Scanner(System.in);
+
+        do {
+            System.out.println("Digite o número de 1 a 4 para escolher uma das opções: ");
+
+            System.out.println("1) Instruções");
+
+            System.out.println("2) Jogar");
+
+            System.out.println("3) Créditos");
+
+            System.out.println("4) Sair");
+
+            System.out.print("Digite: ");
+
+            menu = entrada.nextInt();
+
+            switch (menu) {
+                case 1:
+                    System.out.println("=================================================");
+                    System.out.println("Instruções:\n ");
+
+                    System.out.println("Avalie currículos e avance as semanas pra ser promovido.");
+
+                    System.out.println("=================================================");
+
+                    break;
+                case 2:
+
+
+
+                    System.out.println("=================================================");
+                    System.out.print("Carregando jogo: ");
+                    printStringWithIntervalsPerChar("██████████████████████████████████████████████████████████████████");
+                    sair = true;
+
+                    break;
+                case 3:
+                    System.out.println("=================================================");
+                    System.out.println("Créditos:");
+
+                    System.out.println("Jogo criador por: \n\n" +
+                            "Felipe Brenner\n" +
+                            "Gustavo Gonzalez\n" +
+                            "Henrick Adrian\n" +
+                            "Julio Honda\n" +
+                            "Leonardo Fujimura\n");
+                    System.out.println("=================================================");
+                    break;
+                case 4:
+                    System.out.println("=================================================");
+                    System.out.println("Sair");
+                    System.out.println("okay....");
+                    System.out.println("=================================================");
+                    sair = true;
+
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+            }
+
+        } while (!sair);
+
+        return menu;
+
+    }
 
     static void printStringWithIntervalsPerChar(String string){
         // dahora, mt bom
