@@ -6,8 +6,18 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    /*
+    ============================================================================
+              ___   _                           _
+             | __| | |  _  _  __ __  ___     _ | |  ___   __ _   ___
+             | _|  | | | || | \ \ / / _ \   | || | / _ \ / _` | / _ \
+             |_|   |_|  \_,_| /_\_\ \___/    \__/  \___/ \__, | \___/
+                                                         |___/
+    ============================================================================
+     */
 
+
+    public static void main(String[] args) {
 
         //TODO validar se este eh o melhor lugar para este cara ficar
         printStringWithIntervalsPerChar(
@@ -15,19 +25,19 @@ public class Main {
                         "██   ██ ██      ████  ████       ██    ██ ██ ████   ██ ██   ██ ██    ██\n" +
                         "██████  █████   ██ ████ ██ █████ ██    ██ ██ ██ ██  ██ ██   ██ ██    ██\n" +
                         "██   ██ ██      ██  ██  ██        ██  ██  ██ ██  ██ ██ ██   ██ ██    ██\n" +
-                        "██████  ███████ ██      ██         ████   ██ ██   ████ ██████   ██████");
+                        "██████  ███████ ██      ██         ████   ██ ██   ████ ██████   ██████", 20);
         printStringWithIntervalsPerChar(
                 "\n\n\t\t\t\t\t\t █████   ██████\n" +
                         "\t\t\t\t\t\t██   ██ ██    ██\n" +
                         "\t\t\t\t\t\t███████ ██    ██\n" +
                         "\t\t\t\t\t\t██   ██ ██    ██\n" +
-                        "\t\t\t\t\t\t██   ██  ██████");
+                        "\t\t\t\t\t\t██   ██  ██████", 20);
         printColoredOutput(
                 "\n\n██████   ██████   ██████  ███████ ██ ███    ██ ███████ ███████ ███████ \n" +
                         "██   ██ ██    ██ ██    ██ ██      ██ ████   ██ ██      ██      ██      \n" +
                         "██████  ██    ██ ██    ██ ███████ ██ ██ ██  ██ █████   ███████ ███████ \n" +
                         "██   ██ ██    ██ ██    ██      ██ ██ ██  ██ ██ ██           ██      ██ \n" +
-                        "██████   ██████   ██████  ███████ ██ ██   ████ ███████ ███████ ███████", RED);
+                        "██████   ██████   ██████  ███████ ██ ██   ████ ███████ ███████ ███████ \n", RED_BOLD_BRIGHT);
 
         Scanner entrada = new Scanner(System.in);
         System.out.println("\nPressione ENTER para continuar");
@@ -47,58 +57,285 @@ public class Main {
                     "\nEstado: São Void" +
                     "\nPaís: Terra de Ningúem" +
                     "\n\n\tNo Mundo atual, os monstros são os seres com a classe mais baixa da sociedade, mas o que\n" +
-                    "acontece quando alguns deles começam um negócio? Isto aconteceu! Agora esses monstros dominam as\n" +
-                    "maiores empresas do mundo, sempre dando um jeito de ganhar dinheiro com diversas novas formas de\n" +
-                    "negócios, desde estabelecimento, de magias empacotadas e transmutações instantâneas, a que mais\n" +
-                    "faz sucesso por ser uma energia renovável, a Biofobia, também conhecida mundialmente como\n" +
-                    "Phobia Energy!\n" +
+                    "acontece quando alguns deles começam um negócio? Bom... Isto aconteceu!\n" +
+                    "\tAgora esses monstros dominam as maiores empresas do mundo, sempre dando um jeito de ganhar dinheiro\n" +
+                    "com diversas novas formas de negócios, desde estabelecimento, de magias empacotadas e transmutações\n" +
+                    "instantâneas, a que mais faz sucesso por ser uma energia renovável, a Biofobia, também conhecida\n" +
+                    "mundialmente como Phobia Energy!\n" +
                     "\tEssa energia é produzida através do susto genuíno das humanos ou monstros, mas uma coisa\n" +
                     "é certa: as crianças são aquelas que mais exalam essa energia!\n" +
                     "\n\tA maior fabricante de Biofobia de Terra de Niguém teve que demitir sua antiga gerente da parte de\n" +
                     "contratações, Martha, por conta de uma excesso de raiva, que acabou fazendo com que a empresa\n" +
                     "perdesse diversos patrocinadores.\n" +
                     "\tMeses depois, um demônio do R.M. (Recursos Monstros), por ordens do dono da empresa, contrata um\n" +
-                    "novo estagiário para ocupar o antigo lugar de Martha.", 1);
+                    "novo estagiário para ocupar o antigo lugar de Martha.", 35);
 
-            printStringWithIntervalsPerChar("\n\n\n Você chega na empresa e logo é parado por uma secretária.\n\n");
+            System.out.println("\n\n\n Você chega na empresa e logo é parado por uma secretária.");
 
             caixaDialogoAutomatico("Secretária", "Ei! Pare aí! O que veio fazer aqui?! Quem é você?!");
-            printStringWithIntervalsPerChar("Informe seu nome:");
-            String nomeJogador=entrada.next();
+            System.out.println("Informe seu nome:");
+            String nomeJogador = entrada.next();
 
-            caixaDialogoAutomatico("Secretária", "Tá, mas... " + nomeJogador + " de quê? Você não tem sobrenome não??");
+            caixaDialogoAutomatico("Secretária", "Tá, mas... \"" + nomeJogador + "\" de quê? Você não tem sobrenome não??");
 
-            printStringWithIntervalsPerChar("Informe seu sobrenome:");
-            String sobrenomeJogador=entrada.next();
+            System.out.println("Informe seu sobrenome:");
+            String sobrenomeJogador = entrada.next();
 
-            caixaDialogoAutomatico("Secretária", "Oh! Mil perdões! Eu não sabia que era o novo funcionário daqui...");
+            String fullNameJogador = nomeJogador + " " + sobrenomeJogador;
+
+            caixaDialogoAutomatico("Secretária", "Oh! Mil perdões " + fullNameJogador+"\n\tVenha comigo ^^\n\tVou te levar até um sala para fazer alguns testes antes de te aprovar na empresa!");
+
+            System.out.println("Você acompanha a secretária até a sala.\n");
+
+            simulacaoCarregamento();
+
+            caixaDialogoAutomatico("Secretária", "Tenho aqui 3 currículos de teste para sabermos se você dá conta\nResponda esses 3 para que eu possa te avaliar.");
+
+            if(curriculosTutorial()<=3){
+                System.out.println("Apurando resultados: ");
+                printStringWithIntervalsPerCharWithColor("████████████████████████████████████████████████████████████████████", RED_BOLD_BRIGHT);
+
+                caixaDialogoAutomatico("Secretária", "Infelizmente não podemos te aceitar na empresa...\n" +
+                        "Espero que entenda...");
+
+                printStringWithIntervalsPerChar("Você Não foi aprovado na empresa\n\n");
+                printStringWithIntervalsPerChar(" ██████   █████  ███    ███ ███████      ██████  ██    ██ ███████ ██████  ██ \n" +
+                        "██       ██   ██ ████  ████ ██          ██    ██ ██    ██ ██      ██   ██ ██ \n" +
+                        "██   ███ ███████ ██ ████ ██ █████       ██    ██ ██    ██ █████   ██████  ██ \n" +
+                        "██    ██ ██   ██ ██  ██  ██ ██          ██    ██  ██  ██  ██      ██   ██    \n" +
+                        " ██████  ██   ██ ██      ██ ███████      ██████    ████   ███████ ██   ██ ██",100);
+
+            }else {
 
 
+                caixaDialogoAutomatico("Secretária", "Parece que você pegou o jeito já! ^^\nAgora é com você!");
+            }
 
+        }
+    }
 
+    /*
+    ============================================================================
+                                 _
+                              _ | |  ___   __ _   ___
+                             | || | / _ \ / _` | / _ \
+                              \__/  \___/ \__, | \___/
+                                          |___/
+     ============================================================================
+     */
 
+    static int curriculosTutorial() {
+        Scanner entrada = new Scanner(System.in);
+        int pontos = 0;
+        ArrayList<String> curriculos = new ArrayList<String>();
+
+        curriculos.add("============================================================================================\n" +
+                "\n" +
+                "                           Curriculum Vitae\n" +
+                "\n" +
+                "NOME:\nAlberto Nobrega" +
+                "\n" +
+                "\n" +
+                "IDADE: \n176 anos" +
+                "\n" +
+                "\n" +
+                "OBJETIVO:\nAprimorar meus conhecimentos de susto e assustar o máximo de pessoas que eu pudar para ajudar no crescimento da empresa." +
+                "\n" +
+                "\n" +
+                "CARACTERÍSTICAS:\n- Assustador,\n- Dentes afiados,\n- Grande." +
+                "\n" +
+                "\n" +
+                "FORMAÇÃO ACADÊMICA:\nCentro Universitário Void & Darkness\nCiências do susto - Concluído" +
+                "\n" +
+                "\n" +
+                "============================================================================================");
+
+        curriculos.add("============================================================================================\n" +
+                "\n" +
+                "                           Curriculum Vitae\n" +
+                "\n" +
+                "NOME:\nFillp xar-lart" +
+                "\n" +
+                "\n" +
+                "IDADE: \n385 anos" +
+                "\n" +
+                "\n" +
+                "OBJETIVO:\nAdquirir novas habilidades e aprimorar as que já tenho." +
+                "\n" +
+                "\n" +
+                "CARACTERÍSTICAS:\n- Inteligente,\n- Carismático,\n- Quadrúpede,\n- Escamoso,\n- Timido." +
+                "\n" +
+                "\n" +
+                "FORMAÇÃO ACADÊMICA:\nUniversidade Sustos e Pulos\nEngenharia do medo - Cursando 3º Semestre" +
+                "\n" +
+                "\n" +
+                "============================================================================================");
+
+        curriculos.add("============================================================================================\n" +
+                "\n" +
+                "                           Curriculum Vitae\n" +
+                "\n" +
+                "NOME:\nVexar Tarkov" +
+                "\n" +
+                "\n" +
+                "IDADE: \n231 anos" +
+                "\n" +
+                "\n" +
+                "OBJETIVO:\nAprimorar meus conhecimentos de susto e assustar o máximo de pessoas que eu pudar para ajudar no crescimento da empresa." +
+                "\n" +
+                "\n" +
+                "CARACTERÍSTICAS:\n- Baixo,\n- Medroso." +
+                "\n" +
+                "\n" +
+                "FORMAÇÃO ACADÊMICA:\nUniversidade Sustos\nMarketing - Incompleto" +
+                "\n" +
+                "\n" +
+                "============================================================================================");
+
+        for (int i = 0; i < 3; i++) {
+
+            System.out.println(curriculos.get(i));
+
+            char aceitarCurriculo = ' ';
+            boolean sair = false;
+
+            do {
+                System.out.println("Deseja aprovar esse currículo? (S/N)");
+                aceitarCurriculo = entrada.next().charAt(0);
+                switch (aceitarCurriculo) {
+                    case 's':
+                    case 'S':
+                        sair = true;
+                        if (i == 0) {
+                            pontos = pontos + 2;
+                        } else if (i == 1) {
+                            pontos++;
+                        } else if (i == 2) {
+                            pontos = pontos - 2;
+                        }
+
+                        break;
+
+                    case 'n':
+                    case 'N':
+                        sair = true;
+                        if (i == 0) {
+                            pontos = pontos - 2;
+                        } else if (i == 1) {
+                            pontos--;
+                        } else if (i == 2) {
+                            pontos = pontos + 2;
+                        }
+
+                        break;
+                    default:
+                        System.out.println("Opção inválida");
+
+                }
+            } while (!sair);
+
+            switch (i) {
+                case 0:
+                    caixaDialogoAutomatico("Secretária", "Hmm... Escolha interessante...");
+                    break;
+                case 1:
+                    caixaDialogoAutomatico("Secretária", "Acho que eu faria a mesma escolha ^^");
+                    break;
+                case 2:
+                    caixaDialogoAutomatico("Secretária", "Não sei se essa foi a melhor escolha, mas você que decide.");
+                    break;
+
+            }
 
         }
 
-
+        return pontos;
     }
 
 
 
-    public static void printColoredOutput(String text, String fontColor, String backgroundColor) {
-        System.out.println(backgroundColor + fontColor + text + RESET);
-    }
-    public static void printColoredOutput(String text, String fontColor) {
-        System.out.println(fontColor + text + RESET);
+    static int menuSelecao() {
+        boolean sair = false;
+        int opcaoEscolhida;
+
+        do {
+            System.out.println("Digite o número de 1 a 4 para escolher uma das opções:");
+            printColoredOutput("1) ", RED_BOLD_BRIGHT);
+            System.out.println("Instruções");
+            printColoredOutput("2) ", RED_BOLD_BRIGHT);
+            System.out.println("Jogar");
+            printColoredOutput("3) ", RED_BOLD_BRIGHT);
+            System.out.println("Creditos");
+            printColoredOutput("4) ", RED_BOLD_BRIGHT);
+            System.out.println("Sair\n");
+
+            printColoredOutput("Digite: ", WHITE_BOLD);
+            Scanner entrada = new Scanner(System.in);
+            opcaoEscolhida = entrada.nextInt();
+
+            switch (opcaoEscolhida) {
+                case 1:
+                    System.out.println("\n=================================================\n" +
+                            "Instruções:\n" +
+                            "Avalie currículos e avance as semanas pra ser promovido.\n" +
+                            "=================================================\n");
+
+                    break;
+                case 2:
+                    System.out.println("\n=================================================\n" +
+                            "Carregando: ");
+                    printStringWithIntervalsPerCharWithColor("████████████████████████████████████████████████████████████████████", RED_BOLD_BRIGHT);
+
+                    sair = true;
+                    break;
+                case 3:
+                    System.out.println("\n=================================================\n" +
+                            "Créditos: \n" +
+                            "Jogo criador por: \n\n" +
+                            "Felipe Brenner\n" +
+                            "Gustavo Gonzalez\n" +
+                            "Henrick Adrian\n" +
+                            "Julio Honda\n" +
+                            "Leonardo Fujimura\n" +
+                            "=================================================\n");
+
+                    break;
+                case 4:
+                    System.out.println("\n=================================================\n" +
+                            "Sair\n" +
+                            "okay....\n" +
+                            "=================================================\n");
+
+                    sair = true;
+                    break;
+                default:
+                    printColoredOutput("Opção inválida", RED_BOLD_BRIGHT);
+            }
+        } while (!sair);
+
+        return opcaoEscolhida;
     }
 
     static void caixaDialogoAutomatico(String nomeFalante, String fala){
         String topCaixaDialogo = "---------------------------------------------------------------------------------------------------\n";
         String bottomCaixaDialogo = "___________________________________________________________________________________________________\n";
-        System.out.println(nomeFalante + ":\n" + topCaixaDialogo);
-        printStringWithIntervalsPerChar("\t" + fala + "\n",100);
+        System.out.println("\n\n" + nomeFalante + ":\n" + topCaixaDialogo);
+        printStringWithIntervalsPerChar("" + fala + "\n",225);
         System.out.println(bottomCaixaDialogo);
     }
+
+    static void simulacaoCarregamento(){
+        System.out.println("Carregando: ");
+        printStringWithIntervalsPerCharWithColor("████████████████████████████████████████████████████████████████████", RED_BOLD_BRIGHT);
+    }
+    /*
+    ============================================================================
+                   ___                      _               _
+                  / __|  _  _   _ _   _ _  (_)  __   _  _  | |  ___
+                 | (__  | || | | '_| | '_| | | / _| | || | | | / _ \
+                  \___|  \_,_| |_|   |_|   |_| \__|  \_,_| |_| \___/
+     ============================================================================
+     */
 
     //TODO mudar e adicionar nomes
     static String sorteadorNomes() {
@@ -154,8 +391,9 @@ public class Main {
     //TODO adicionar mais característas
     static String sorteadorCaracteristicas() {
         ArrayList<String> listaCaracteristicas = new ArrayList<>(Arrays.asList(
-            "Assustador", "Grande",    "Inteligente", "Timido",
-            "Estressado", "Assustado", "Fofo"
+            "Assustador", "Grande", "Inteligente", "Timido",
+            "Estressado", "Assustado", "Fofo", "Medroso", "Carismático", "Aventureiro", "Peludo", "Escamoso", "Feio",
+                 "Estiloso", "Bonito", "Alto", "Baixo", "Quadrúpede", "Bípede", "Dentes afiados"
         ));
         Collections.shuffle(listaCaracteristicas);
 
@@ -205,6 +443,11 @@ public class Main {
     }
 
     static void geradorDeCurrículo() {
+
+        System.out.println("============================================================================================");
+
+        System.out.println("\n                  Curriculum Vitae\n\n");
+
         printColoredOutput("NOME: ", GREEN);
         System.out.println(sorteadorNomes() + " " + sorteadorSobrenomes());
 
@@ -220,78 +463,49 @@ public class Main {
         printColoredOutput("\n" + "FORMAÇÃO ACADÊMICA: ", GREEN);
         System.out.println(sorteadorUniversidades());
         System.out.println(sorteadorCurso() + " - " + sorteadorNivelFormacao());
+        System.out.println("============================================================================================");
     }
 
-    static int menuSelecao() {
-        int menu;
-        boolean sair = false;
-
-        Scanner entrada = new Scanner(System.in);
+    static void aceitarCurrículo(){
+        Scanner entrada=new Scanner(System.in);
+        char aceitarCurriculo=' ';
+        boolean sair=false;
 
         do {
-            System.out.println("Digite o número de 1 a 4 para escolher uma das opções: ");
-
-            System.out.println("1) Instruções");
-
-            System.out.println("2) Jogar");
-
-            System.out.println("3) Créditos");
-
-            System.out.println("4) Sair");
-
-            System.out.print("Digite: ");
-
-            menu = entrada.nextInt();
-
-            switch (menu) {
-                case 1:
-                    System.out.println("=================================================");
-                    System.out.println("Instruções:\n ");
-
-                    System.out.println("Avalie currículos e avance as semanas pra ser promovido.");
-
-                    System.out.println("=================================================");
-
+            System.out.println("Deseja aprovar esse currículo? (S/N)");
+            aceitarCurriculo = entrada.next().charAt(0);
+            switch (aceitarCurriculo){
+                case's':
+                case'S':
+                    sair=true;
                     break;
-                case 2:
 
-
-
-                    System.out.println("=================================================");
-                    System.out.print("Carregando jogo: ");
-                    printStringWithIntervalsPerChar("██████████████████████████████████████████████████████████████████");
-                    System.out.println("\n Conclúido!\n");
-                    sair = true;
-
-                    break;
-                case 3:
-                    System.out.println("=================================================");
-                    System.out.println("Créditos:");
-
-                    System.out.println("Jogo criador por: \n\n" +
-                            "Felipe Brenner\n" +
-                            "Gustavo Gonzalez\n" +
-                            "Henrick Adrian\n" +
-                            "Julio Honda\n" +
-                            "Leonardo Fujimura\n");
-                    System.out.println("=================================================");
-                    break;
-                case 4:
-                    System.out.println("=================================================");
-                    System.out.println("Sair");
-                    System.out.println("okay....");
-                    System.out.println("=================================================");
-                    sair = true;
-
+                case 'n':
+                case'N':
+                    sair=true;
                     break;
                 default:
                     System.out.println("Opção inválida");
+
             }
+        }while (!sair);
 
-        } while (!sair);
+    }
 
-        return menu;
+    /*
+    ============================================================================
+                              ___         _          _
+                             | _ \  _ _  (_)  _ _   | |_
+                             |  _/ | '_| | | | ' \  |  _|
+                             |_|   |_|   |_| |_||_|  \__|
+     ============================================================================
+     */
 
+    public static void printColoredOutput(String text, String fontColor, String backgroundColor) {
+        System.out.println(backgroundColor + fontColor + text + RESET);
+    }
+    public static void printColoredOutput(String text, String fontColor) {
+        System.out.print(fontColor + text + RESET);
     }
 
     static void printStringWithIntervalsPerChar(String string){
@@ -308,12 +522,23 @@ public class Main {
     }
 
     static void printStringWithIntervalsPerChar(String string, int intervaloMiliSegundos){
-        // dahora, mt bom
         for (int i = 0; i < string.length(); i++) {
 
             System.out.print(string.charAt(i));
             try {
                 Thread.sleep(intervaloMiliSegundos);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+
+    static void printStringWithIntervalsPerCharWithColor(String string, String fontColor){
+        for (int i = 0; i < string.length(); i++) {
+
+            printColoredOutput(String.valueOf(string.charAt(i)), fontColor);
+            try {
+                Thread.sleep(35);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
