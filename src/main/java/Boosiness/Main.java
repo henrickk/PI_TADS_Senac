@@ -40,8 +40,7 @@ public class Main {
                         "██████   ██████   ██████  ███████ ██ ██   ████ ███████ ███████ ███████ \n", RED_BOLD_BRIGHT);
 
         Scanner entrada = new Scanner(System.in);
-        System.out.println("\nPressione ENTER para continuar");
-        entrada.nextLine();
+        pressEnterToContinue();
 
         int escolha = menuSelecao();
 
@@ -49,8 +48,7 @@ public class Main {
             System.out.println("bye");
         } else if (escolha == 2) {
 
-            System.out.println("\nPressione ENTER para continuar");
-            entrada.nextLine();
+            pressEnterToContinue();
 
             printStringWithIntervalsPerChar("\nAno: 4078" +
                     "\nCidade: Lugar Nenhum" +
@@ -70,22 +68,26 @@ public class Main {
                     "\tMeses depois, um demônio do R.M. (Recursos Monstros), por ordens do dono da empresa, contrata um\n" +
                     "novo estagiário para ocupar o antigo lugar de Martha.", 35);
 
-            System.out.println("\n\n\n Você chega na empresa e logo é parado por uma secretária.");
+            pressEnterToContinue();
+
+            printColoredOutput("\n\n\n Você chega na empresa e logo é parado por uma secretária.\n",RED_BOLD_BRIGHT);
+
+            pressEnterToContinue();
 
             caixaDialogoAutomatico("Secretária", "Ei! Pare aí! O que veio fazer aqui?! Quem é você?!");
-            System.out.println("Informe seu nome:");
+            printColoredOutput("\nInforme seu nome:\n",RED_BOLD_BRIGHT);
             String nomeJogador = entrada.next();
 
             caixaDialogoAutomatico("Secretária", "Tá, mas... \"" + nomeJogador + "\" de quê? Você não tem sobrenome não??");
 
-            System.out.println("Informe seu sobrenome:");
+            printColoredOutput("Informe seu sobrenome:\n",RED_BOLD_BRIGHT);
             String sobrenomeJogador = entrada.next();
 
             String fullNameJogador = nomeJogador + " " + sobrenomeJogador;
 
-            caixaDialogoAutomatico("Secretária", "Oh! Mil perdões " + fullNameJogador+"\n\tVenha comigo ^^\n\tVou te levar até um sala para fazer alguns testes antes de te aprovar na empresa!");
+            caixaDialogoAutomatico("Secretária", "Oh! Mil perdões " + fullNameJogador+"\nVenha comigo ^^\nVou te levar até um sala para fazer alguns testes antes de te aprovar na empresa!");
 
-            System.out.println("Você acompanha a secretária até a sala.\n");
+            printColoredOutput("Você acompanha a secretária até a sala.\n",RED_BOLD_BRIGHT);
 
             simulacaoCarregamento();
 
@@ -107,8 +109,38 @@ public class Main {
 
             }else {
 
+                System.out.println("Apurando resultados: ");
+                printStringWithIntervalsPerCharWithColor("████████████████████████████████████████████████████████████████████", RED_BOLD_BRIGHT);
 
-                caixaDialogoAutomatico("Secretária", "Parece que você pegou o jeito já! ^^\nAgora é com você!");
+                caixaDialogoAutomatico("Secretária", "Parece que você pegou o jeito já! ^^\nAgora é com você!\nVou te levar até sua sala.");
+                simulacaoCarregamento();
+
+                caixaDialogoAutomatico("Secretária","Essa aqui é sua sala. Está um pouco bagunçada por conta da última pessoa que esteve nela...");
+
+                printColoredOutput("\nVocê olha ao redor e vê muitas teias de aranhas e que os armários estão todos empoeirados.\n",RED_BOLD_BRIGHT);
+
+                pressEnterToContinue();
+
+                printColoredOutput("\nAlguém se aproxima...\n",RED_BOLD_BRIGHT);
+
+                pressEnterToContinue();
+
+                caixaDialogoAutomatico("????", "Você deve ser o novo contratado! Prazer, sou o Karbu Miosa, gerente daqui!");
+
+                printColoredOutput("\nKarbu decide te contar sobre a empresa\n",RED_BOLD_BRIGHT);
+
+                caixaDialogoAutomatico("Karbu Miosa", "Como é seu primeiro dia, não pegaremos leve com você ^^\n" +
+                        "Você é sangue novo, então vai aguentar bastante!\n" +
+                        "Te vejo na pausa do almoço, isso se você sobreviver até lá!");
+
+                printColoredOutput("\nKarbu vira de costas e sai andando rindo alto de forma maléfica\n",RED_BOLD_BRIGHT);
+
+                pressEnterToContinue();
+
+                caixaDialogoAutomatico("Secretária", "Bom, preciso voltar pro meu posto. Boa sorte!");
+                printColoredOutput("\nA secretária se despede e volta para seu posto",RED_BOLD_BRIGHT);
+
+
             }
 
         }
@@ -252,7 +284,11 @@ public class Main {
         return pontos;
     }
 
-
+    static void pressEnterToContinue(){
+        Scanner entrada= new Scanner(System.in);
+        printColoredOutput("\nPressione ENTER para continuar\n",RED_BOLD_BRIGHT);
+        entrada.nextLine();
+    }
 
     static int menuSelecao() {
         boolean sair = false;
@@ -320,7 +356,7 @@ public class Main {
         String topCaixaDialogo = "---------------------------------------------------------------------------------------------------\n";
         String bottomCaixaDialogo = "___________________________________________________________________________________________________\n";
         System.out.println("\n\n" + nomeFalante + ":\n" + topCaixaDialogo);
-        printStringWithIntervalsPerChar("" + fala + "\n",225);
+        printStringWithIntervalsPerChar("" + fala + "\n",100);
         System.out.println(bottomCaixaDialogo);
     }
 
