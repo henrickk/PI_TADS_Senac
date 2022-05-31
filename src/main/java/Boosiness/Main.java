@@ -85,7 +85,7 @@ public class Main {
 
             String fullNameJogador = nomeJogador + " " + sobrenomeJogador;
 
-            caixaDialogoAutomatico("Secretária", "Oh! Mil perdões " + fullNameJogador+"\nVenha comigo ^^\nVou te levar até um sala para fazer alguns testes antes de te aprovar na empresa!");
+            caixaDialogoAutomatico("Secretária", "Oh! Mil perdões " + fullNameJogador+"\nVenha comigo ^^\nVou te levar até uma sala para fazer alguns testes antes de te aprovar na empresa!");
 
             printColoredOutput("Você acompanha a secretária até a sala.\n",RED_BOLD_BRIGHT);
 
@@ -138,8 +138,32 @@ public class Main {
                 pressEnterToContinue();
 
                 caixaDialogoAutomatico("Secretária", "Bom, preciso voltar pro meu posto. Boa sorte!");
-                printColoredOutput("\nA secretária se despede e volta para seu posto",RED_BOLD_BRIGHT);
+                printColoredOutput("\nA secretária se despede e volta para seu posto\n",RED_BOLD_BRIGHT);
 
+                printColoredOutput("Você senta na sua cadeira e começa a trabalhar\n",RED_BOLD_BRIGHT);
+
+                simulacaoCarregamento();
+
+                printColoredOutput("\nDia 1 - 9:45 A.M.\n", RED_BOLD_BRIGHT);
+
+                for(int i=0; i<=4;i++){
+                    geradorDeCurrículo();
+                    aceitarCurrículo();
+                }
+
+                    printStringWithIntervalsPerCharWithColor("\nDia 1 - 12:00 P.M. - Pausa Almoço\n",RED_BOLD_BRIGHT);
+
+                simulacaoCarregamento();
+
+                caixaDialogoAutomatico("Karbu Miosa","Olha só ele! Parece que sobreviveu ao primeiro dia!\n Eai? Foi tranquilo?");
+
+                caixaDialogoAutomatico("????","Ah! Então ele que é o novato? Prazer, sou o Roka Hardra, tô aqui há mais de 100 anos");
+
+                printColoredOutput("Você olha para Roka e percebe que os olhos estão profundos e sem cor\n", RED_BOLD_BRIGHT);
+
+                caixaDialogoAutomatico("Roka Hardra", "Está tudo bem? Você está me encarando...");
+
+                printColoredOutput("Você vira seu rosto rapidamente e volta a comer sua coxinha\n", RED_BOLD_BRIGHT);
 
             }
 
