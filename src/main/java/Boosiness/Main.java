@@ -144,11 +144,11 @@ public class Main {
 
                 simulacaoCarregamento();
 
-                printColoredOutput("\n\nDia 1 - 10:45 A.M.", RED_BOLD_BRIGHT);
+                printColoredOutput("\n\nSemana 1 - 10:45 A.M.", RED_BOLD_BRIGHT);
 
-                for(int i=1; i<=4;i++){
+                for(int i=1; i<=3;i++){
 
-                    System.out.printf(" | Objetivo diário: %d/10\n", i);
+                    System.out.printf(" | Objetivo semanal: %d/5\n", i);
 
                     geradorDeCurrículo();
                     aceitarCurrículo();
@@ -170,17 +170,83 @@ public class Main {
 
                 printColoredOutput("Termina o horário de almoço e você volta à sua sala\n",RED_BOLD_BRIGHT);
 
-
-
-                for(int i=5; i<=9; i++) {
-                    System.out.printf("\n\nObjetivo diário: %d/10\n", i);
+                for(int i=3; i<=4; i++) {
+                    System.out.printf("\n\nObjetivo semanal: %d/5\n", i);
                     geradorDeCurrículo();
                     aceitarCurrículo();
                 }
 
-                printColoredOutput("\nChega 8:00 P.M. e termina o seu horário.\n\nKarbu Miosa entra na sua sala\n", RED_BOLD_BRIGHT);
+                printColoredOutput("\nChega dia 07 e termina uma semana.\n\nKarbu Miosa entra na sua sala\n", RED_BOLD_BRIGHT);
 
-                caixaDialogoAutomatico("Karbu Miosa", "Eai, novato! Como foi hoje? Se prepara que amanhã tem mais!");
+                caixaDialogoAutomatico("Karbu Miosa", "Eai, novato! Como foi essa semana? Se prepare para o desafio semanal!");
+
+                printColoredOutput("Você se levanta, respira fundo e fala que está preparado!\n", RED_BOLD_BRIGHT);
+
+                simulacaoCarregamento();
+
+                printColoredOutput("Desafio Semanal!\n", RED_BOLD_BRIGHT);
+
+                int cont = 1;
+                boolean acertou = false;
+                do {
+                    System.out.println("\nEsta técnica serve para representar genericamente um processo, um conjunto de atividades\n" +
+                            "ou parte de um conjunto maior. Por regra geral, o(a) _____________ deve ser construído(a)\n" +
+                            "de cima para baixo e da direita para a esquerda, no sentido do formulário, embora essa disposição\n" +
+                            "não seja rígida e sirva a princípio apenas para dar ordem à representação gráfica.\n\n" +
+                            "Assinale a alternativa que completa corretamente a lacuna anterior.\n");
+
+                    System.out.println("______________________________\n");// 30
+                    System.out.println("a) fluxograma");
+                    System.out.println("b) organograma");
+                    System.out.println("c) planilha radial");
+                    System.out.println("d) diagrama de Ishikawa");
+
+                    System.out.println("------------------------------\n");
+                    System.out.println("Escolha a alternativa digitando entra A e D:\n ");
+                    System.out.println("------------------------------\n");
+
+                    String resposta = entrada.next();
+                    System.out.println("\n------------------------------\n");// 30
+
+                    switch (resposta) {
+                        case "a":
+                        case "A":
+                            System.out.println("Resposta Correta!");
+                            acertou = true;
+                            break;
+
+                        case "b":
+                        case "B":
+                        case "c":
+                        case "C":
+                        case "d":
+                        case "D":
+                            System.out.println("Resposta Incorreta!!\nTentativa:" + cont + "/3\n");
+                            cont++;
+                            break;
+
+                        default:
+                            System.out.println("Resposta inválida!\nTentativa: " + cont + "/3\n");
+                            System.out.println("______________________________\n");
+                            cont++;
+                    }
+
+                } while (!acertou && cont <= 3);
+
+                if (!acertou) {
+                    caixaDialogoAutomatico("Secretária", "Infelizmente não podemos te manter na empresa...\n" +
+                            "Espero que entenda...");
+
+                    printStringWithIntervalsPerChar("Você não se provou apto a continuar\n\n");
+                    printStringWithIntervalsPerChar(" ██████   █████  ███    ███ ███████      ██████  ██    ██ ███████ ██████  ██ \n" +
+                            "██       ██   ██ ████  ████ ██          ██    ██ ██    ██ ██      ██   ██ ██ \n" +
+                            "██   ███ ███████ ██ ████ ██ █████       ██    ██ ██    ██ █████   ██████  ██ \n" +
+                            "██    ██ ██   ██ ██  ██  ██ ██          ██    ██  ██  ██  ██      ██   ██    \n" +
+                            " ██████  ██   ██ ██      ██ ███████      ██████    ████   ███████ ██   ██ ██",100);
+                    return;
+                }
+
+                caixaDialogoAutomatico("Karbu Miosa", "Parabéns, você passou, está liberado!");
 
                 printColoredOutput("Você se levanta, pega suas coisas e vai em direção à saída, mas é parado.\n", RED_BOLD_BRIGHT);
 
@@ -202,8 +268,8 @@ public class Main {
 
                printColoredOutput("Você entra em sua sala, vê que está tudo no lugar então decide trabalhar\n", RED_BOLD_BRIGHT );
 
-                for(int i=1; i<=9;i++){
-                    System.out.printf("\n\nObjetivo diário: %d/10\n", i);
+                for(int i=1; i<=4;i++){
+                    System.out.printf("\n\nObjetivo diário: %d/4\n", i);
                     geradorDeCurrículo();
                     aceitarCurrículo();
                 }
@@ -215,9 +281,10 @@ public class Main {
                         "então fica esperto!\nSe você participar da entrevista e for mal, pode ser demitido!\n" +
                         "As entrevistas começam no final dessa semana. Boa sorte!");
 
-                printStringWithIntervalsPerCharWithColor("Dia 2: Finalizado!", RED_BOLD_BRIGHT);
-            }
+                printStringWithIntervalsPerCharWithColor("Dia 2: Finalizado!\n\n", RED_BOLD_BRIGHT);
 
+                boss1();
+            }
         }
     }
 
@@ -439,6 +506,457 @@ public class Main {
         System.out.println("Carregando: ");
         printStringWithIntervalsPerCharWithColor("████████████████████████████████████████████████████████████████████", RED_BOLD_BRIGHT);
     }
+
+    // Boss 1 (com 5 questões)
+    static void boss1() {
+
+        Scanner input = new Scanner(System.in);
+
+        int cont = 1;
+
+        boolean acertou = false;
+
+        List quest = new ArrayList();
+
+        quest.add("Depende do tamanho do porta-malas\n");// Questão correta
+        quest.add("Uma grande bolinha de tênis\n");
+        quest.add("Eu não sei\n");
+        quest.add("Talvez... 50 mil bolinhas...\n");
+
+        // Quetão 1
+
+        do {
+
+            Collections.shuffle(quest);
+
+            System.out.println("\n1) Hohoh! Quantas bolinhas de tênis caberiam dentro de uma limousine?");
+            System.out.println("______________________________\n");// 30
+
+            System.out.println("a) " + quest.get(0));
+
+            System.out.println("b) " + quest.get(1));
+
+            System.out.println("c) " + quest.get(2));
+
+            System.out.println("d) " + quest.get(3));
+
+            System.out.println("------------------------------\n");
+            System.out.println("Escolha a alternativa digitando entra A e D:\n ");
+            System.out.println("------------------------------\n");
+
+            String resposta = input.next();
+            System.out.println("\n------------------------------\n");// 30
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (quest.get(0).equals("Depende do tamanho do porta-malas\n" + cont)) {
+                        System.out.println("Resposta correta! \nTentativa: " + cont + "/3");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!\nTentativa: " + cont + "/3\n");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "b":
+                case "B":
+                    if (quest.get(1).equals("Depende do tamanho do porta-malas\n")) {
+                        System.out.println("Resposta correta!\nTentativa" + cont + "/3\n");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!\nTentativa: " + cont + "/3\n");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "c":
+                case "C":
+                    if (quest.get(2).equals("Depende do tamanho do porta-malas\n")) {
+                        System.out.println("Resposta correta!\nTentativa: " + cont + "/3\n");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!\nTentativa: " + cont + "/3\n");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "d":
+                case "D":
+                    if (quest.get(3).equals("Depende do tamanho do porta-malas\n")) {
+                        System.out.println("Resposta correta!\nTetativa: " + cont + "/3\n");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!\nTentativa: " + cont + "/3\n");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                default:
+                    System.out.println("Resposta inválida!\nTentativa: " + cont + "/3\n");
+                    System.out.println("______________________________\n");// 30
+            }
+
+        } while (!acertou && cont < 3);
+
+        // Quetão 2
+
+        List quest2 = new ArrayList();
+
+        quest2.add("Me vestiria como uma abelha e diria que transportaria o mel para a rainha.\n");// Questão correta
+        quest2.add("Por qual motivo eu faria isso se sou alérgico á abelhas?\n");
+        quest2.add("Tentaria assustar as abelhas e ficaria com todo o mel.\n");
+        quest2.add("Não quero correr o risco de ser picado!\n");
+
+        do {
+
+            Collections.shuffle(quest2);
+
+            System.out.println("2) Hohoh! O que você faria para roubar uma grande colmeia de abelhas para obter mel?");
+            System.out.println("______________________________\n");// 30
+
+            System.out.println("a) " + quest2.get(0));
+
+            System.out.println("b) " + quest2.get(1));
+
+            System.out.println("c) " + quest2.get(2));
+
+            System.out.println("d) " + quest2.get(3));
+
+            System.out.println("------------------------------\n");
+            System.out.println("Escolha a alternativa digitando entra A e D:\n ");
+            System.out.println("------------------------------\n");
+
+            String resposta = input.next();
+            System.out.println("\n------------------------------\n");// 30
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (quest2.get(0)
+                            .equals("Me vestiria como uma abelha e diria que transportaria o mel para a rainha.\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "b":
+                case "B":
+                    if (quest2.get(1)
+                            .equals("Me vestiria como uma abelha e diria que transportaria o mel para a rainha.\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "c":
+                case "C":
+                    if (quest2.get(2)
+                            .equals("Me vestiria como uma abelha e diria que transportaria o mel para a rainha.\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "d":
+                case "D":
+                    if (quest2.get(3)
+                            .equals("Me vestiria como uma abelha e diria que transportaria o mel para a rainha.\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                default:
+                    System.out.println("Resposta inválida!");
+                    System.out.println("______________________________\n");// 30
+            }
+
+        } while (!acertou && cont < 3);
+
+        if (acertou) {
+            System.out.println("Você acertou na " + cont + " tentativa!");
+            System.out.println("\n______________________________\n");// 30
+        } else {
+            System.out.println("Você errou nas 3 chances!");
+        }
+
+        // Quetão 3
+
+        List quest3 = new ArrayList();
+
+        quest3.add("...\n");// Questão correta
+        quest3.add("...1\n");
+        quest3.add("...2\n");
+        quest3.add("...3\n");
+
+        do {
+
+            Collections.shuffle(quest3);
+
+            System.out.println("3) ...");
+            System.out.println("______________________________\n");// 30
+
+            System.out.println("a) " + quest3.get(0));
+
+            System.out.println("b) " + quest3.get(1));
+
+            System.out.println("c) " + quest3.get(2));
+
+            System.out.println("d) " + quest3.get(3));
+
+            System.out.println("------------------------------\n");
+            System.out.println("Escolha a alternativa digitando entra A e D:\n ");
+            System.out.println("------------------------------\n");
+
+            String resposta = input.next();
+            System.out.println("\n------------------------------\n");// 30
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (quest3.get(0).equals("...\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "b":
+                case "B":
+                    if (quest3.get(1).equals("...\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "c":
+                case "C":
+                    if (quest3.get(2).equals("...\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "d":
+                case "D":
+                    if (quest3.get(3).equals("...\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                default:
+                    System.out.println("Resposta inválida!");
+                    System.out.println("______________________________\n");// 30
+            }
+
+        } while (!acertou && cont < 3);
+
+        if (acertou) {
+            System.out.println("Você acertou na " + cont + " tentativa!");
+            System.out.println("\n______________________________\n");// 30
+        } else {
+            System.out.println("Você errou nas 3 chances!");
+        }
+
+        // Quetão 4
+
+        List quest4 = new ArrayList();
+
+        quest4.add("...\n");// Questão correta
+        quest4.add("...1\n");
+        quest4.add("...2\n");
+        quest4.add("...3\n");
+
+        do {
+
+            Collections.shuffle(quest4);
+
+            System.out.println("4) ...");
+            System.out.println("______________________________\n");// 30
+
+            System.out.println("a) " + quest4.get(0));
+
+            System.out.println("b) " + quest4.get(1));
+
+            System.out.println("c) " + quest4.get(2));
+
+            System.out.println("d) " + quest4.get(3));
+
+            System.out.println("------------------------------\n");
+            System.out.println("Escolha a alternativa digitando entra A e D:\n ");
+            System.out.println("------------------------------\n");
+
+            String resposta = input.next();
+            System.out.println("\n------------------------------\n");// 30
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (quest4.get(0).equals("...\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "b":
+                case "B":
+                    if (quest4.get(1).equals("...\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "c":
+                case "C":
+                    if (quest4.get(2).equals("...\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "d":
+                case "D":
+                    if (quest4.get(3).equals("...\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                default:
+                    System.out.println("Resposta inválida!");
+                    System.out.println("______________________________\n");// 30
+            }
+
+        } while (!acertou && cont < 3);
+
+        if (acertou) {
+            System.out.println("Você acertou na " + cont + " tentativa!");
+            System.out.println("\n______________________________\n");// 30
+        } else {
+            System.out.println("Você errou nas 3 chances!");
+        }
+
+        // Quetão 5
+
+        List quest5 = new ArrayList();
+
+        quest5.add("...\n");// Questão correta
+        quest5.add("...1\n");
+        quest5.add("...2\n");
+        quest5.add("...3\n");
+
+        do {
+
+            Collections.shuffle(quest5);
+
+            System.out.println("4) ...");
+            System.out.println("______________________________\n");// 30
+
+            System.out.println("a) " + quest5.get(0));
+
+            System.out.println("b) " + quest5.get(1));
+
+            System.out.println("c) " + quest5.get(2));
+
+            System.out.println("d) " + quest5.get(3));
+
+            System.out.println("------------------------------\n");
+            System.out.println("Escolha a alternativa digitando entra A e D:\n ");
+            System.out.println("------------------------------\n");
+
+            String resposta = input.next();
+            System.out.println("\n------------------------------\n");// 30
+
+            switch (resposta) {
+                case "a":
+                case "A":
+                    if (quest5.get(0).equals("...\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "b":
+                case "B":
+                    if (quest5.get(1).equals("...\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "c":
+                case "C":
+                    if (quest5.get(2).equals("...\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                case "d":
+                case "D":
+                    if (quest5.get(3).equals("...\n")) {
+                        System.out.println("Resposta correta!");
+                        acertou = true;
+                    } else {
+                        System.out.println("Resposta incorreta!");
+                        System.out.println("______________________________\n");// 30
+                    }
+                    break;
+
+                default:
+                    System.out.println("Resposta inválida!");
+                    System.out.println("______________________________\n");// 30
+            }
+
+        } while (!acertou && cont < 3);
+    }
+
     /*
     ============================================================================
                    ___                      _               _
