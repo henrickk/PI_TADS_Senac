@@ -25,13 +25,13 @@ public class Main {
                         "██   ██ ██      ████  ████       ██    ██ ██ ████   ██ ██   ██ ██    ██\n" +
                         "██████  █████   ██ ████ ██ █████ ██    ██ ██ ██ ██  ██ ██   ██ ██    ██\n" +
                         "██   ██ ██      ██  ██  ██        ██  ██  ██ ██  ██ ██ ██   ██ ██    ██\n" +
-                        "██████  ███████ ██      ██         ████   ██ ██   ████ ██████   ██████", 20);
+                        "██████  ███████ ██      ██         ████   ██ ██   ████ ██████   ██████", 5);
         printStringWithIntervalsPerChar(
                 "\n\n\t\t\t\t\t\t █████   ██████\n" +
                         "\t\t\t\t\t\t██   ██ ██    ██\n" +
                         "\t\t\t\t\t\t███████ ██    ██\n" +
                         "\t\t\t\t\t\t██   ██ ██    ██\n" +
-                        "\t\t\t\t\t\t██   ██  ██████", 20);
+                        "\t\t\t\t\t\t██   ██  ██████", 5);
         printColoredOutput(
                 "\n\n██████   ██████   ██████  ███████ ██ ███    ██ ███████ ███████ ███████ \n" +
                         "██   ██ ██    ██ ██    ██ ██      ██ ████   ██ ██      ██      ██      \n" +
@@ -70,7 +70,7 @@ public class Main {
 
             pressEnterToContinue();
 
-            printColoredOutput("\n\n\n Você chega na empresa e logo é parado por uma secretária.\n",RED_BOLD_BRIGHT);
+            printColoredOutput("\nVocê chega na empresa e logo é parado por uma secretária.\n",RED_BOLD_BRIGHT);
 
             pressEnterToContinue();
 
@@ -140,13 +140,16 @@ public class Main {
                 caixaDialogoAutomatico("Secretária", "Bom, preciso voltar pro meu posto. Boa sorte!");
                 printColoredOutput("\nA secretária se despede e volta para seu posto\n",RED_BOLD_BRIGHT);
 
-                printColoredOutput("Você senta na sua cadeira e começa a trabalhar\n",RED_BOLD_BRIGHT);
+                printColoredOutput("Você senta na sua cadeira e começa a trabalhar\n\n",RED_BOLD_BRIGHT);
 
                 simulacaoCarregamento();
 
-                printColoredOutput("\nDia 1 - 9:45 A.M.\n", RED_BOLD_BRIGHT);
+                printColoredOutput("\n\nDia 1 - 10:45 A.M.", RED_BOLD_BRIGHT);
 
-                for(int i=0; i<=4;i++){
+                for(int i=1; i<=4;i++){
+
+                    System.out.printf(" | Objetivo diário: %d/10\n", i);
+
                     geradorDeCurrículo();
                     aceitarCurrículo();
                 }
@@ -155,7 +158,7 @@ public class Main {
 
                 simulacaoCarregamento();
 
-                caixaDialogoAutomatico("Karbu Miosa","Olha só ele! Parece que sobreviveu ao primeiro dia!\n Eai? Foi tranquilo?");
+                caixaDialogoAutomatico("Karbu Miosa","Olha só ele! Parece que alguém ainda está vivo!\nEai? Foi tranquilo?");
 
                 caixaDialogoAutomatico("????","Ah! Então ele que é o novato? Prazer, sou o Roka Hardra, tô aqui há mais de 100 anos");
 
@@ -163,8 +166,56 @@ public class Main {
 
                 caixaDialogoAutomatico("Roka Hardra", "Está tudo bem? Você está me encarando...");
 
-                printColoredOutput("Você vira seu rosto rapidamente e volta a comer sua coxinha\n", RED_BOLD_BRIGHT);
+                printColoredOutput("Você vira seu rosto rapidamente e volta a comer sua coxinha\n\n", RED_BOLD_BRIGHT);
 
+                printColoredOutput("Termina o horário de almoço e você volta à sua sala\n",RED_BOLD_BRIGHT);
+
+
+
+                for(int i=5; i<=9; i++) {
+                    System.out.printf("\n\nObjetivo diário: %d/10\n", i);
+                    geradorDeCurrículo();
+                    aceitarCurrículo();
+                }
+
+                printColoredOutput("\nChega 8:00 P.M. e termina o seu horário.\n\nKarbu Miosa entra na sua sala\n", RED_BOLD_BRIGHT);
+
+                caixaDialogoAutomatico("Karbu Miosa", "Eai, novato! Como foi hoje? Se prepara que amanhã tem mais!");
+
+                printColoredOutput("Você se levanta, pega suas coisas e vai em direção à saída, mas é parado.\n", RED_BOLD_BRIGHT);
+
+                caixaDialogoAutomatico("Secretária", ""+fullNameJogador+"! Vem aqui!\nEsse é seu crachá. Ficou pronto agora mesmo.\nNunca esqueça ou perca esse crachá!");
+
+                printColoredOutput("Você vai embora pra casa super cansado, toma banho, janta, deita na cama e dorme.\n\n", RED_BOLD_BRIGHT);
+
+                printStringWithIntervalsPerCharWithColor("Dia 1 - 10:45 P.M. - Finalizado!\n", RED_BOLD_BRIGHT);
+
+                simulacaoCarregamento();
+
+                //Final dia 1 e início dia 2
+
+                printStringWithIntervalsPerCharWithColor("\n\nDia 2 - 8:00 A.M. \n", RED_BOLD_BRIGHT);
+
+               caixaDialogoAutomatico("Secretária", "Olha só! Você voltou! Bom Dia!");
+
+               printColoredOutput("Você dá bom dia e vai direto pra sua sala\nAo se aproximar da sala você vê alguém saindo de lá, mas não dá atenção.\n", RED_BOLD_BRIGHT);
+
+               printColoredOutput("Você entra em sua sala, vê que está tudo no lugar então decide trabalhar\n", RED_BOLD_BRIGHT );
+
+                for(int i=1; i<=9;i++){
+                    System.out.printf("\n\nObjetivo diário: %d/10\n", i);
+                    geradorDeCurrículo();
+                    aceitarCurrículo();
+                }
+
+                printColoredOutput("8:00 P.M. Final do turno\n", RED_BOLD_BRIGHT);
+
+                caixaDialogoAutomatico("Karbu Miosa", "Eai, novato, tá tranquilo? Se tiver qualquer " +
+                        "dúvida, lembre-se de se virar sozinho!\nAh! Outra coisa, fiquei sabendo que alguém pode ser promovido, " +
+                        "então fica esperto!\nSe você participar da entrevista e for mal, pode ser demitido!\n" +
+                        "As entrevistas começam no final dessa semana. Boa sorte!");
+
+                printStringWithIntervalsPerCharWithColor("Dia 2: Finalizado!", RED_BOLD_BRIGHT);
             }
 
         }
@@ -377,10 +428,10 @@ public class Main {
     }
 
     static void caixaDialogoAutomatico(String nomeFalante, String fala){
-        String topCaixaDialogo = "---------------------------------------------------------------------------------------------------\n";
+        String topCaixaDialogo = "___________________________________________________________________________________________________\n";
         String bottomCaixaDialogo = "___________________________________________________________________________________________________\n";
         System.out.println("\n\n" + nomeFalante + ":\n" + topCaixaDialogo);
-        printStringWithIntervalsPerChar("" + fala + "\n",100);
+        printStringWithIntervalsPerChar("" + fala + "\n",50);
         System.out.println(bottomCaixaDialogo);
     }
 
@@ -461,9 +512,17 @@ public class Main {
         Random aleatorio = new Random();
         int quantidadeCaracteristicas = aleatorio.nextInt(quantidadeMaximaCaracteristicas) + 1;
 
-        String caracteristicasMonstro = " ";
-        for(int i = 0; i <= quantidadeCaracteristicas; i++) {
-            caracteristicasMonstro = caracteristicasMonstro + "-" + listaCaracteristicas.get(i) + ",\n";
+        String caracteristicasMonstro = "\n";
+
+        for (int i=0; i <= quantidadeCaracteristicas; i++) {
+            String caracteristicaAtual = "";
+            if ( i == quantidadeCaracteristicas ) {
+                caracteristicaAtual = "-" + listaCaracteristicas.get(i);
+            } else {
+                caracteristicaAtual = "-" + listaCaracteristicas.get(i) + ",\n";
+            }
+
+            caracteristicasMonstro = caracteristicasMonstro + caracteristicaAtual;
         }
 
         return caracteristicasMonstro;
