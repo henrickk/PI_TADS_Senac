@@ -16,6 +16,7 @@ public class Main {
     ============================================================================
      */
 
+    public static String execMode = "dev";
 
     public static void main(String[] args) {
 
@@ -106,185 +107,274 @@ public class Main {
                         "██   ███ ███████ ██ ████ ██ █████       ██    ██ ██    ██ █████   ██████  ██ \n" +
                         "██    ██ ██   ██ ██  ██  ██ ██          ██    ██  ██  ██  ██      ██   ██    \n" +
                         " ██████  ██   ██ ██      ██ ███████      ██████    ████   ███████ ██   ██ ██",100);
-
-            }else {
-
-                System.out.println("Apurando resultados: ");
-                printStringWithIntervalsPerCharWithColor("████████████████████████████████████████████████████████████████████", RED_BOLD_BRIGHT);
-
-                caixaDialogoAutomatico("Secretária", "Parece que você pegou o jeito já! ^^\nAgora é com você!\nVou te levar até sua sala.");
-                simulacaoCarregamento();
-
-                caixaDialogoAutomatico("Secretária","Essa aqui é sua sala. Está um pouco bagunçada por conta da última pessoa que esteve nela...");
-
-                printColoredOutput("\nVocê olha ao redor e vê muitas teias de aranhas e que os armários estão todos empoeirados.\n",RED_BOLD_BRIGHT);
-
-                pressEnterToContinue();
-
-                printColoredOutput("\nAlguém se aproxima...\n",RED_BOLD_BRIGHT);
-
-                pressEnterToContinue();
-
-                caixaDialogoAutomatico("????", "Você deve ser o novo contratado! Prazer, sou o Karbu Miosa, gerente daqui!");
-
-                printColoredOutput("\nKarbu decide te contar sobre a empresa\n",RED_BOLD_BRIGHT);
-
-                caixaDialogoAutomatico("Karbu Miosa", "Como é seu primeiro dia, não pegaremos leve com você ^^\n" +
-                        "Você é sangue novo, então vai aguentar bastante!\n" +
-                        "Te vejo na pausa do almoço, isso se você sobreviver até lá!");
-
-                printColoredOutput("\nKarbu vira de costas e sai andando rindo alto de forma maléfica\n",RED_BOLD_BRIGHT);
-
-                pressEnterToContinue();
-
-                caixaDialogoAutomatico("Secretária", "Bom, preciso voltar pro meu posto. Boa sorte!");
-                printColoredOutput("\nA secretária se despede e volta para seu posto\n",RED_BOLD_BRIGHT);
-
-                printColoredOutput("Você senta na sua cadeira e começa a trabalhar\n\n",RED_BOLD_BRIGHT);
-
-                simulacaoCarregamento();
-
-                printColoredOutput("\n\nSemana 1 - 10:45 A.M.", RED_BOLD_BRIGHT);
-
-                for(int i=1; i<=3;i++){
-
-                    System.out.printf(" | Objetivo semanal: %d/5\n", i);
-
-                    geradorDeCurrículo();
-                    aceitarCurrículo();
-                }
-
-                    printStringWithIntervalsPerCharWithColor("\nDia 1 - 12:00 P.M. - Pausa Almoço\n",RED_BOLD_BRIGHT);
-
-                simulacaoCarregamento();
-
-                caixaDialogoAutomatico("Karbu Miosa","Olha só ele! Parece que alguém ainda está vivo!\nEai? Foi tranquilo?");
-
-                caixaDialogoAutomatico("????","Ah! Então ele que é o novato? Prazer, sou o Roka Hardra, tô aqui há mais de 100 anos");
-
-                printColoredOutput("Você olha para Roka e percebe que os olhos estão profundos e sem cor\n", RED_BOLD_BRIGHT);
-
-                caixaDialogoAutomatico("Roka Hardra", "Está tudo bem? Você está me encarando...");
-
-                printColoredOutput("Você vira seu rosto rapidamente e volta a comer sua coxinha\n\n", RED_BOLD_BRIGHT);
-
-                printColoredOutput("Termina o horário de almoço e você volta à sua sala\n",RED_BOLD_BRIGHT);
-
-                for(int i=3; i<=4; i++) {
-                    System.out.printf("\n\nObjetivo semanal: %d/5\n", i);
-                    geradorDeCurrículo();
-                    aceitarCurrículo();
-                }
-
-                printColoredOutput("\nChega dia 07 e termina uma semana.\n\nKarbu Miosa entra na sua sala\n", RED_BOLD_BRIGHT);
-
-                caixaDialogoAutomatico("Karbu Miosa", "Eai, novato! Como foi essa semana? Se prepare para o desafio semanal!");
-
-                printColoredOutput("Você se levanta, respira fundo e fala que está preparado!\n", RED_BOLD_BRIGHT);
-
-                simulacaoCarregamento();
-
-                printColoredOutput("Desafio Semanal!\n", RED_BOLD_BRIGHT);
-
-                int cont = 1;
-                boolean acertou = false;
-                do {
-                    System.out.println("\nEsta técnica serve para representar genericamente um processo, um conjunto de atividades\n" +
-                            "ou parte de um conjunto maior. Por regra geral, o(a) _____________ deve ser construído(a)\n" +
-                            "de cima para baixo e da direita para a esquerda, no sentido do formulário, embora essa disposição\n" +
-                            "não seja rígida e sirva a princípio apenas para dar ordem à representação gráfica.\n\n" +
-                            "Assinale a alternativa que completa corretamente a lacuna anterior.\n");
-
-                    System.out.println("______________________________\n");// 30
-                    System.out.println("a) fluxograma");
-                    System.out.println("b) organograma");
-                    System.out.println("c) planilha radial");
-                    System.out.println("d) diagrama de Ishikawa");
-
-                    System.out.println("------------------------------\n");
-                    System.out.println("Escolha a alternativa digitando entra A e D:\n ");
-                    System.out.println("------------------------------\n");
-
-                    String resposta = entrada.next();
-                    System.out.println("\n------------------------------\n");// 30
-
-                    switch (resposta) {
-                        case "a":
-                        case "A":
-                            System.out.println("Resposta Correta!");
-                            acertou = true;
-                            break;
-
-                        case "b":
-                        case "B":
-                        case "c":
-                        case "C":
-                        case "d":
-                        case "D":
-                            System.out.println("Resposta Incorreta!!\nTentativa:" + cont + "/3\n");
-                            cont++;
-                            break;
-
-                        default:
-                            System.out.println("Resposta inválida!\nTentativa: " + cont + "/3\n");
-                            System.out.println("______________________________\n");
-                            cont++;
-                    }
-
-                } while (!acertou && cont <= 3);
-
-                if (!acertou) {
-                    caixaDialogoAutomatico("Secretária", "Infelizmente não podemos te manter na empresa...\n" +
-                            "Espero que entenda...");
-
-                    printStringWithIntervalsPerChar("Você não se provou apto a continuar\n\n");
-                    printStringWithIntervalsPerChar(" ██████   █████  ███    ███ ███████      ██████  ██    ██ ███████ ██████  ██ \n" +
-                            "██       ██   ██ ████  ████ ██          ██    ██ ██    ██ ██      ██   ██ ██ \n" +
-                            "██   ███ ███████ ██ ████ ██ █████       ██    ██ ██    ██ █████   ██████  ██ \n" +
-                            "██    ██ ██   ██ ██  ██  ██ ██          ██    ██  ██  ██  ██      ██   ██    \n" +
-                            " ██████  ██   ██ ██      ██ ███████      ██████    ████   ███████ ██   ██ ██",100);
-                    return;
-                }
-
-                caixaDialogoAutomatico("Karbu Miosa", "Parabéns, você passou, está liberado!");
-
-                printColoredOutput("Você se levanta, pega suas coisas e vai em direção à saída, mas é parado.\n", RED_BOLD_BRIGHT);
-
-                caixaDialogoAutomatico("Secretária", ""+fullNameJogador+"! Vem aqui!\nEsse é seu crachá. Ficou pronto agora mesmo.\nNunca esqueça ou perca esse crachá!");
-
-                printColoredOutput("Você vai embora pra casa super cansado, toma banho, janta, deita na cama e dorme.\n\n", RED_BOLD_BRIGHT);
-
-                printStringWithIntervalsPerCharWithColor("Dia 1 - 10:45 P.M. - Finalizado!\n", RED_BOLD_BRIGHT);
-
-                simulacaoCarregamento();
-
-                //Final dia 1 e início dia 2
-
-                printStringWithIntervalsPerCharWithColor("\n\nDia 2 - 8:00 A.M. \n", RED_BOLD_BRIGHT);
-
-               caixaDialogoAutomatico("Secretária", "Olha só! Você voltou! Bom Dia!");
-
-               printColoredOutput("Você dá bom dia e vai direto pra sua sala\nAo se aproximar da sala você vê alguém saindo de lá, mas não dá atenção.\n", RED_BOLD_BRIGHT);
-
-               printColoredOutput("Você entra em sua sala, vê que está tudo no lugar então decide trabalhar\n", RED_BOLD_BRIGHT );
-
-                for(int i=1; i<=4;i++){
-                    System.out.printf("\n\nObjetivo diário: %d/4\n", i);
-                    geradorDeCurrículo();
-                    aceitarCurrículo();
-                }
-
-                printColoredOutput("8:00 P.M. Final do turno\n", RED_BOLD_BRIGHT);
-
-                caixaDialogoAutomatico("Karbu Miosa", "Eai, novato, tá tranquilo? Se tiver qualquer " +
-                        "dúvida, lembre-se de se virar sozinho!\nAh! Outra coisa, fiquei sabendo que alguém pode ser promovido, " +
-                        "então fica esperto!\nSe você participar da entrevista e for mal, pode ser demitido!\n" +
-                        "As entrevistas começam no final dessa semana. Boa sorte!");
-
-                printStringWithIntervalsPerCharWithColor("Dia 2: Finalizado!\n\n", RED_BOLD_BRIGHT);
-
-                boss1();
+                return;
             }
+
+            System.out.println("Apurando resultados: ");
+            printStringWithIntervalsPerCharWithColor("████████████████████████████████████████████████████████████████████", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Secretária", "Parece que você pegou o jeito já! ^^\nAgora é com você!\nVou te levar até sua sala.");
+            simulacaoCarregamento();
+
+            caixaDialogoAutomatico("Secretária","Essa aqui é sua sala. Está um pouco bagunçada por conta da última pessoa que esteve nela...");
+
+            printColoredOutput("\nVocê olha ao redor e vê muitas teias de aranhas e que os armários estão todos empoeirados.\n",RED_BOLD_BRIGHT);
+
+            pressEnterToContinue();
+
+            printColoredOutput("\nAlguém se aproxima...\n",RED_BOLD_BRIGHT);
+
+            pressEnterToContinue();
+
+            caixaDialogoAutomatico("????", "Você deve ser o novo contratado! Prazer, sou o Karbu Miosa, gerente daqui!");
+
+            printColoredOutput("\nKarbu decide te contar sobre a empresa\n",RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Karbu Miosa", "Como é seu primeiro dia, não pegaremos leve com você ^^\n" +
+                    "Você é sangue novo, então vai aguentar bastante!\n" +
+                    "Te vejo na pausa do almoço, isso se você sobreviver até lá!");
+
+            printColoredOutput("\nKarbu vira de costas e sai andando rindo alto de forma maléfica\n",RED_BOLD_BRIGHT);
+
+            pressEnterToContinue();
+
+            caixaDialogoAutomatico("Secretária", "Bom, preciso voltar pro meu posto. Boa sorte!");
+            printColoredOutput("\nA secretária se despede e volta para seu posto\n",RED_BOLD_BRIGHT);
+
+            printColoredOutput("Você senta na sua cadeira e começa a trabalhar\n\n",RED_BOLD_BRIGHT);
+
+            simulacaoCarregamento();
+
+            /*
+            ============================================================================
+                          ___                                        _
+                         / __|  ___   _ __    __ _   _ _    __ _    / |
+                         \__ \ / -_) | '  \  / _` | | ' \  / _` |   | |
+                         |___/ \___| |_|_|_| \__,_| |_||_| \__,_|   |_|
+             ============================================================================
+             */
+
+            printColoredOutput("\n\nSemana 1 - 10:45 A.M.", RED_BOLD_BRIGHT);
+
+            for(int i=0; i<2; i++){
+
+                System.out.printf(" | Objetivo semanal: %d/5\n", i);
+
+                geradorDeCurrículo();
+                aceitarCurrículo();
+            }
+
+                printStringWithIntervalsPerCharWithColor("\nDia 1 - 12:00 P.M. - Pausa Almoço\n",RED_BOLD_BRIGHT);
+
+            simulacaoCarregamento();
+
+            caixaDialogoAutomatico("Karbu Miosa","Olha só ele! Parece que alguém ainda está vivo!\nEai? Foi tranquilo?");
+
+            caixaDialogoAutomatico("????","Ah! Então ele que é o novato? Prazer, sou o Roka Hardra, tô aqui há mais de 100 anos");
+
+            printColoredOutput("Você olha para Roka e percebe que os olhos estão profundos e sem cor\n", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Roka Hardra", "Está tudo bem? Você está me encarando...");
+
+            printColoredOutput("Você vira seu rosto rapidamente e volta a comer sua coxinha\n\n", RED_BOLD_BRIGHT);
+
+            printColoredOutput("Termina o horário de almoço e você volta à sua sala\n",RED_BOLD_BRIGHT);
+
+            for(int i=2; i<3; i++) {
+                System.out.printf("\n\nObjetivo semanal: %d/5\n", i);
+                geradorDeCurrículo();
+                aceitarCurrículo();
+            }
+
+            printColoredOutput("\nChega dia 07 e termina uma semana.\n\nKarbu Miosa entra na sua sala\n", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Karbu Miosa", "Eai, novato! Como foi essa semana? Se prepare para o desafio semanal!");
+
+            printColoredOutput("Você se levanta, respira fundo e fala que está preparado!\n", RED_BOLD_BRIGHT);
+
+            simulacaoCarregamento();
+
+            printColoredOutput("Desafio Semanal!\n", RED_BOLD_BRIGHT);
+
+            int quantidadeTentativas = 1;
+            boolean acertou = false;
+            do {
+                System.out.println("\nEsta técnica serve para representar genericamente um processo, um conjunto de atividades\n" +
+                        "ou parte de um conjunto maior. Por regra geral, o(a) _____________ deve ser construído(a)\n" +
+                        "de cima para baixo e da direita para a esquerda, no sentido do formulário, embora essa disposição\n" +
+                        "não seja rígida e sirva a princípio apenas para dar ordem à representação gráfica.\n\n" +
+                        "Assinale a alternativa que completa corretamente a lacuna anterior.\n");
+
+                System.out.println("______________________________\n");// 30
+                System.out.println("a) fluxograma");
+                System.out.println("b) organograma");
+                System.out.println("c) planilha radial");
+                System.out.println("d) diagrama de Ishikawa");
+
+                System.out.println("------------------------------\n");
+                System.out.println("Escolha a alternativa digitando entra A e D:\n ");
+                System.out.println("------------------------------\n");
+
+                String resposta = entrada.next();
+                System.out.println("\n------------------------------\n");// 30
+
+                switch (resposta) {
+                    case "a":
+                    case "A":
+                        System.out.println("Resposta Correta!");
+                        acertou = true;
+                        break;
+
+                    case "b":
+                    case "B":
+                    case "c":
+                    case "C":
+                    case "d":
+                    case "D":
+                        System.out.println("Resposta Incorreta!!\nTentativa:" + quantidadeTentativas + "/3\n");
+                        quantidadeTentativas++;
+                        break;
+
+                    default:
+                        System.out.println("Resposta inválida!\nTentativa: " + quantidadeTentativas + "/3\n");
+                        System.out.println("______________________________\n");
+                        quantidadeTentativas++;
+                }
+
+            } while (!acertou && quantidadeTentativas <= 3);
+
+            if (!acertou) {
+                caixaDialogoAutomatico("Secretária", "Infelizmente não podemos te manter na empresa...\n" +
+                        "Espero que entenda...");
+
+                printStringWithIntervalsPerChar("Você não se provou apto a continuar\n\n");
+                printStringWithIntervalsPerChar(" ██████   █████  ███    ███ ███████      ██████  ██    ██ ███████ ██████  ██ \n" +
+                        "██       ██   ██ ████  ████ ██          ██    ██ ██    ██ ██      ██   ██ ██ \n" +
+                        "██   ███ ███████ ██ ████ ██ █████       ██    ██ ██    ██ █████   ██████  ██ \n" +
+                        "██    ██ ██   ██ ██  ██  ██ ██          ██    ██  ██  ██  ██      ██   ██    \n" +
+                        " ██████  ██   ██ ██      ██ ███████      ██████    ████   ███████ ██   ██ ██",100);
+                return;
+            }
+
+            caixaDialogoAutomatico("Karbu Miosa", "Parabéns, você passou, está liberado!");
+
+            printColoredOutput("Você se levanta, pega suas coisas e vai em direção à saída, mas é parado.\n", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Secretária", ""+fullNameJogador+"! Vem aqui!\nEsse é seu crachá. Ficou pronto agora mesmo.\nNunca esqueça ou perca esse crachá!");
+
+            printColoredOutput("Você vai embora pra casa super cansado, toma banho, janta, deita na cama e dorme.\n\n", RED_BOLD_BRIGHT);
+
+            printStringWithIntervalsPerCharWithColor("Semana 1 - Finalizada!\n", RED_BOLD_BRIGHT);
+
+            simulacaoCarregamento();
+
+            /*
+            ============================================================================
+                          ___
+                         / __|  ___   _ __    __ _   _ _    __ _    |_  )
+                         \__ \ / -_) | '  \  / _` | | ' \  / _` |    / /
+                         |___/ \___| |_|_|_| \__,_| |_||_| \__,_|   /___|
+             ============================================================================
+             */
+
+            printStringWithIntervalsPerCharWithColor("\n\nSemana 2 - 8:00 A.M. \n", RED_BOLD_BRIGHT);
+
+           caixaDialogoAutomatico("Secretária", "Olha só! Você voltou! Bom Dia!");
+
+           printColoredOutput("Você dá bom dia e vai direto pra sua sala\nAo se aproximar da sala você vê alguém saindo de lá, mas não dá atenção.\n", RED_BOLD_BRIGHT);
+
+           printColoredOutput("Você entra em sua sala, vê que está tudo no lugar então decide trabalhar\n", RED_BOLD_BRIGHT );
+
+            for(int i=0; i<4; i++){
+                System.out.printf("\n\nObjetivo semanal: %d/4\n", i);
+                geradorDeCurrículo();
+                aceitarCurrículo();
+            }
+
+            printColoredOutput("8:00 P.M. Final do turno\n", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Karbu Miosa", "Eai, novato, tá tranquilo? Se tiver qualquer " +
+                    "dúvida, lembre-se de se virar sozinho!\nAh! Outra coisa, fiquei sabendo que alguém pode ser promovido, " +
+                    "então fica esperto!\nSe você participar da entrevista e for mal, pode ser demitido!\n" +
+                    "As entrevistas começam no final dessa semana. Boa sorte!");
+
+            printStringWithIntervalsPerCharWithColor("Semana 2 - Finalizada!\n\n", RED_BOLD_BRIGHT);
+
+            simulacaoCarregamento();
+
+            /*
+            ============================================================================
+                          ___                                        ____
+                         / __|  ___   _ __    __ _   _ _    __ _    |__ /
+                         \__ \ / -_) | '  \  / _` | | ' \  / _` |    |_ \
+                         |___/ \___| |_|_|_| \__,_| |_||_| \__,_|   |___/
+             ============================================================================
+             */
+
+            printStringWithIntervalsPerCharWithColor("\n\nSemana 3 - 8:00 A.M. \n", RED_BOLD_BRIGHT);
+
+            for(int i=0; i<4; i++){
+                System.out.printf("\n\nObjetivo semanal: %d/4\n", i);
+                geradorDeCurrículo();
+                aceitarCurrículo();
+            }
+
+            printStringWithIntervalsPerCharWithColor("Semana 3 - Finalizada!\n\n", RED_BOLD_BRIGHT);
+
+            simulacaoCarregamento();
+
+            /*
+            ============================================================================
+                          ___                                        _ _
+                         / __|  ___   _ __    __ _   _ _    __ _    | | |
+                         \__ \ / -_) | '  \  / _` | | ' \  / _` |   |_  _|
+                         |___/ \___| |_|_|_| \__,_| |_||_| \__,_|     |_|
+             ============================================================================
+             */
+
+            printStringWithIntervalsPerCharWithColor("\n\nSemana 4 - 8:00 A.M. \n", RED_BOLD_BRIGHT);
+
+            for(int i=0; i<4; i++){
+                System.out.printf("\n\nObjetivo semanal: %d/4\n", i);
+                geradorDeCurrículo();
+                aceitarCurrículo();
+            }
+
+            printStringWithIntervalsPerCharWithColor("Semana 4 - Finalizada!\n\n", RED_BOLD_BRIGHT);
+
+            simulacaoCarregamento();
+
+            /*
+            ============================================================================
+                          ___                                        ___
+                         / __|  ___   _ __    __ _   _ _    __ _    | __|
+                         \__ \ / -_) | '  \  / _` | | ' \  / _` |   |__ \
+                         |___/ \___| |_|_|_| \__,_| |_||_| \__,_|   |___/
+             ============================================================================
+             */
+
+            printStringWithIntervalsPerCharWithColor("\n\nSemana 5 - 8:00 A.M. \n", RED_BOLD_BRIGHT);
+
+            for(int i=0; i<4; i++){
+                System.out.printf("\n\nObjetivo semanal: %d/4\n", i);
+                geradorDeCurrículo();
+                aceitarCurrículo();
+            }
+
+            printStringWithIntervalsPerCharWithColor("Semana 5 - Finalizada!\n\n", RED_BOLD_BRIGHT);
+
+            simulacaoCarregamento();
+
+            /*
+            ============================================================================
+                                      ___    ___    ___   ___
+                                     | _ )  / _ \  / __| / __|
+                                     | _ \ | (_) | \__ \ \__ \
+                                     |___/  \___/  |___/ |___/
+             ============================================================================
+             */
+
+            boss1();
         }
     }
 
@@ -459,25 +549,48 @@ public class Main {
                             "=================================================\n");
 
                     break;
-                case 2:
-                    System.out.println("\n=================================================\n" +
-                            "Carregando: ");
-                    printStringWithIntervalsPerCharWithColor("████████████████████████████████████████████████████████████████████", RED_BOLD_BRIGHT);
 
+                case 2:
+                    simulacaoCarregamento();
                     sair = true;
                     break;
+
                 case 3:
                     System.out.println("\n=================================================\n" +
-                            "Créditos: \n" +
-                            "Jogo criador por: \n\n" +
-                            "Felipe Brenner\n" +
-                            "Gustavo Gonzalez\n" +
-                            "Henrick Adrian\n" +
-                            "Julio Honda\n" +
-                            "Leonardo Fujimura\n" +
-                            "=================================================\n");
+                    "Créditos:\n" +
+                    "Jogo criador por:\n");
 
+                    System.out.print("Felipe ");
+                    printColoredOutput("B", RED_BOLD_BRIGHT);
+                    System.out.print("renner\n");
+
+                    System.out.print("Juli");
+                    printColoredOutput("o ", RED_BOLD_BRIGHT);
+                    System.out.print("H");
+                    printColoredOutput("o", RED_BOLD_BRIGHT);
+                    System.out.print("nda\n");
+
+                    System.out.print("Gu");
+                    printColoredOutput("s", RED_BOLD_BRIGHT);
+                    System.out.print("tavo Gonzalez\n");
+
+                    System.out.print("Henrick Adr");
+                    printColoredOutput("i", RED_BOLD_BRIGHT);
+                    System.out.print("a");
+                    printColoredOutput("n\n", RED_BOLD_BRIGHT);
+
+                    System.out.print("L");
+                    printColoredOutput("e", RED_BOLD_BRIGHT);
+                    System.out.print("onardo Fujimura\n");
+
+                    //TODO alterar caso saiba algum sobrenome que contenha "s"
+                    System.out.print("Gu");
+                    printColoredOutput("s", RED_BOLD_BRIGHT);
+                    System.out.print("tavo Gonzalez\n");
+
+                    System.out.println("\n=================================================\n");
                     break;
+
                 case 4:
                     System.out.println("\n=================================================\n" +
                             "Sair\n" +
@@ -1146,12 +1259,17 @@ public class Main {
     }
 
     static void printStringWithIntervalsPerChar(String string){
-        // dahora, mt bom
-        for (int i = 0; i < string.length(); i++) {
+        int intervaloMiliSegundos;
+        if (execMode.equals("dev")) {
+            intervaloMiliSegundos = 0;
+        } else {
+            intervaloMiliSegundos = 35;
+        }
 
+        for (int i = 0; i < string.length(); i++) {
             System.out.print(string.charAt(i));
             try {
-                Thread.sleep(35);
+                Thread.sleep(intervaloMiliSegundos);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
@@ -1159,8 +1277,11 @@ public class Main {
     }
 
     static void printStringWithIntervalsPerChar(String string, int intervaloMiliSegundos){
-        for (int i = 0; i < string.length(); i++) {
+        if (execMode.equals("dev")) {
+            intervaloMiliSegundos = 0;
+        }
 
+        for (int i = 0; i < string.length(); i++) {
             System.out.print(string.charAt(i));
             try {
                 Thread.sleep(intervaloMiliSegundos);
@@ -1171,11 +1292,17 @@ public class Main {
     }
 
     static void printStringWithIntervalsPerCharWithColor(String string, String fontColor){
-        for (int i = 0; i < string.length(); i++) {
+        int intervaloMiliSegundos;
+        if (execMode.equals("dev")) {
+            intervaloMiliSegundos = 0;
+        } else {
+            intervaloMiliSegundos = 35;
+        }
 
+        for (int i = 0; i < string.length(); i++) {
             printColoredOutput(String.valueOf(string.charAt(i)), fontColor);
             try {
-                Thread.sleep(35);
+                Thread.sleep(intervaloMiliSegundos);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
