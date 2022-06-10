@@ -7,6 +7,8 @@ import java.util.Scanner;
 
 public class Main {
 
+
+
     /*
     ============================================================================
               ___   _                           _
@@ -95,7 +97,7 @@ public class Main {
 
             caixaDialogoAutomatico("Secretária", "Tenho aqui 3 currículos de teste para sabermos se você dá conta\nResponda esses 3 para que eu possa te avaliar.");
 
-            if (curriculosTutorial() <= 3) {
+            if (curriculosTutorial() <= 2) {
                 System.out.println("Apurando resultados: ");
                 printStringWithIntervalsPerCharWithColor("████████████████████████████████████████████████████████████████████", RED_BOLD_BRIGHT);
 
@@ -219,7 +221,7 @@ public class Main {
                 System.out.println("d) diagrama de Ishikawa");
 
                 System.out.println("------------------------------\n");
-                System.out.println("Escolha a alternativa digitando entra A e D:\n ");
+                System.out.println("Escolha a alternativa digitando entre A e D:\n ");
                 System.out.println("------------------------------\n");
 
                 String resposta = entrada.next();
@@ -305,9 +307,9 @@ public class Main {
             printColoredOutput(" Semana 2 - dia 10 - 8:00 P.M. - Final do turno\n", RED_BOLD_BRIGHT);
 
             caixaDialogoAutomatico("Karbu Miosa", "Eai, novato, tá tranquilo? Se tiver qualquer " +
-                    "dúvida, lembre-se de se virar sozinho!\nAh! Outra coisa, fiquei sabendo que alguém pode ser promovido, " +
+                    "dúvida, lembre-se de se virar sozinho!\nAh! Outra coisa, fiquei sabendo que alguns monstros podem ser promovidos, " +
                     "então fica esperto!\nSe você participar da entrevista e for mal, pode ser demitido!\n" +
-                    "As entrevistas começam no final desse mês. Boa sorte!");
+                    "As entrevistas começam na última semana desse mês. Boa sorte!");
 
             for (int i = 2; i <= 4; i++) {
                 System.out.printf("\n===================================================================================\n" +
@@ -341,7 +343,7 @@ public class Main {
                 System.out.println("d) Organograma");
 
                 System.out.println("------------------------------\n");
-                System.out.println("Escolha a alternativa digitando entra A e D:\n ");
+                System.out.println("Escolha a alternativa digitando entre A e D:\n ");
                 System.out.println("------------------------------\n");
 
                 String resposta = entrada.next();
@@ -404,9 +406,25 @@ public class Main {
              ============================================================================
              */
 
-            printStringWithIntervalsPerCharWithColor("\n\nSemana 3 - 8:00 A.M. \n", RED_BOLD_BRIGHT);
+            printStringWithIntervalsPerCharWithColor("\n\nDia 15 - Semana 3 - 8:00 A.M. \n", RED_BOLD_BRIGHT);
 
             caixaDialogoAutomatico("Secretária", "Bom dia! Preparado para o trabalho de hoje?");
+
+            printColoredOutput("Você sorri envergonhado e vai até sua sala.\n" +
+                    "Ao entrar, você vê Karbu Miosa acompanhado de outra pessoa te esperando.\n", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Karbu Miosa", "Eai, novato não tão novato assim!\n" +
+                    "Esse aqui é Raku Avaror, chefe da empresa. Ele que fará as entrevistas no final do mês.");
+
+            caixaDialogoAutomatico("Raku Avaror", "Olá, " + fullNameJogador + ", é um prazer finalmente te conhecer!\n" +
+                    "Soube que está tendo um excelente desempenho no seu trabalho. É a primeira vez que alguém trabalha tão bem\n" +
+                    "sem perder a alma e as esperanças.");
+
+            caixaDialogoAutomatico("Karbu Miosa", "Chefe, acho que o senhor falou demais...\n" +
+                    "Mas isso que disse não deixa de ser verdade.\n" +
+                    "Enfim, novato, viemos aqui só dar um \"oi\" mesmo. Tenha um montruoso resto de semana!");
+
+            caixaDialogoAutomatico("Raku Avaror", "Até logo, " + fullNameJogador + ", te vejo na entrevista!");
 
             for (int i = 0; i <= 4; i++) {
                 System.out.printf("\n===================================================================================\n" +
@@ -415,9 +433,93 @@ public class Main {
                 aceitarCurrículo();
             }
 
+            //desafio semanal
+
+            printColoredOutput("\nDia 19 - Sexta-feira - Último dia da semana.\n\nKarbu Miosa entra na sua sala\n", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Karbu Miosa", "Já sabe, né? Então bora!");
+
+            simulacaoCarregamento();
+
+            printColoredOutput("\nDesafio Semanal!\n", RED_BOLD_BRIGHT);
+
+            quantidadeTentativas = 1;
+            acertou = false;
+            do {
+                System.out.println("\nEnquanto a Administração Científica se caracterizava pela ênfase na tarefa realizada\n" +
+                        "pelo operário/colaborador, a Teoria Clássica tinha por característica");
+
+                System.out.println("______________________________\n");// 30
+                System.out.println("a) a necessidade que as organizações sentiram de ordem e de exatidão e das reivindicações\n" +
+                        "\tdos trabalhadores por um tratamento justo e imparcial. ");
+                System.out.println("b) a preocupação psicológica e sociológica quanto à influência massificante da civilização\n" +
+                        "\tindustrial sobre o ser humano. ");
+                System.out.println("c) a ênfase na estrutura que a organização deveria possuir para ser eficiente.");
+                System.out.println("d) o enfoque nos resultados e objetivos alcançados (fins) por meio do controle de todos\n" +
+                        "\tos aspectos de produção.");
+
+                System.out.println("------------------------------\n");
+                System.out.println("Escolha a alternativa digitando entre A e D:\n ");
+                System.out.println("------------------------------\n");
+
+                String resposta = entrada.next();
+                System.out.println("\n------------------------------\n");// 30
+
+                switch (resposta) {
+                    case "c":
+                    case "C":
+                        System.out.println("Resposta Correta!");
+                        acertou = true;
+                        break;
+
+                    case "b":
+                    case "B":
+                    case "d":
+                    case "D":
+                    case "a":
+                    case "A":
+                        System.out.println("Resposta Incorreta!!\nTentativa:" + quantidadeTentativas + "/3\n");
+                        quantidadeTentativas++;
+                        break;
+
+                    default:
+                        System.out.println("Resposta inválida!\nTentativa: " + quantidadeTentativas + "/3\n");
+                        System.out.println("______________________________\n");
+                        quantidadeTentativas++;
+                }
+
+            } while (!acertou && quantidadeTentativas <= 3);
+
+            if (!acertou) {
+                caixaDialogoAutomatico("Karbu Miosa", "Infelizmente não podemos te manter na empresa...\n" +
+                        "Espero que entenda...");
+
+                printStringWithIntervalsPerChar("Você não se provou apto a continuar\n\n");
+                printStringWithIntervalsPerChar(" ██████   █████  ███    ███ ███████      ██████  ██    ██ ███████ ██████  ██ \n" +
+                        "██       ██   ██ ████  ████ ██          ██    ██ ██    ██ ██      ██   ██ ██ \n" +
+                        "██   ███ ███████ ██ ████ ██ █████       ██    ██ ██    ██ █████   ██████  ██ \n" +
+                        "██    ██ ██   ██ ██  ██  ██ ██          ██    ██  ██  ██  ██      ██   ██    \n" +
+                        " ██████  ██   ██ ██      ██ ███████      ██████    ████   ███████ ██   ██ ██", 100);
+                return;
+            }
+
+            caixaDialogoAutomatico("Karbu Miosa", "Parabéns! Pode ir pra casa!");
+
+            printColoredOutput("Ao passar pela recepção você é parado pela secretária\n", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Secretária", "Eu fiquei sabendo que o chefe foi até sua sala. Está tudo bem?\n" +
+                    "Ele é comediante e parece que não leva nada à sério, mas ele é rígido com a qualidade do trabalho.");
+
+            printColoredOutput("Você conta o que aconteceu para Secretária\n", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Secretária", "Ufa! Então era só isso ^^\n" +
+                    "Pelo visto fiquei preocupada a toa...\n" +
+                    "Aproveite seu final de semana!!");
 
 
-            printStringWithIntervalsPerCharWithColor("Semana 3 - Finalizada!\n\n", RED_BOLD_BRIGHT);
+            printColoredOutput("Você passa o final de semana estudando e pensando no que a secretária disse.\n",RED_BOLD_BRIGHT);
+
+            printStringWithIntervalsPerCharWithColor("Dia 21 - Semana 3 - Finalizada!\n\n", RED_BOLD_BRIGHT);
 
             simulacaoCarregamento();
 
@@ -430,16 +532,108 @@ public class Main {
              ============================================================================
              */
 
-            printStringWithIntervalsPerCharWithColor("\n\nSemana 4 - 8:00 A.M. \n", RED_BOLD_BRIGHT);
+            printStringWithIntervalsPerCharWithColor("\n\nDia 22 - Semana 4 - 8:00 A.M. \n", RED_BOLD_BRIGHT);
 
-            for (int i = 0; i <= 4; i++) {
+            caixaDialogoAutomatico("Secretária", fullNameJogador + ", você ficou sabendo? Parece que muita não passou no desafio semana passada.\n" +
+                    "A equipe de demissões e contratações vai trabalhar bastante essa semana... isso inclui você.");
+
+            printColoredOutput("Ao chegar na sua sala, você percebe que sua mesa está lotada de currículos\n", RED_BOLD_BRIGHT);
+            printColoredOutput("Karbu entra desesperado na sua sala.\n",RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Karbu Miosa", nomeJogador + ", preciso muito da sua ajuda essa semana!\n" +
+                    "Nunca imaginei que fossemos ter tantos currículos assim! Tente fazer o máximo que conseguir!");
+
+
+
+            for (int i = 0; i <= 9; i++) {
                 System.out.printf("\n===================================================================================\n" +
-                        "Objetivo semanal: %d/5\n", i);
+                        "Objetivo semanal: %d/?????\n", i);
                 geradorDeCurrículo();
                 aceitarCurrículo();
             }
 
-            printStringWithIntervalsPerCharWithColor("Semana 4 - Finalizada!\n\n", RED_BOLD_BRIGHT);
+            simulacaoCarregamento();
+
+            printStringWithIntervalsPerCharWithColor("\n\nDia 24 - Semana 4 - 8:00 A.M. \n", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Karbu Miosa", "Novato, obrigado pelo seu esforço! Ainda temos muitos currículos, mas já\n" +
+                    "não é mais uma quantidade tão absurda. Ainda peço para que faça o seu melhor.");
+
+            for (int i = 9; i <= 19; i++) {
+                System.out.printf("\n===================================================================================\n" +
+                        "Objetivo semanal: %d/??\n", i);
+                geradorDeCurrículo();
+                aceitarCurrículo();
+            }
+
+            //desafio semanal
+
+            printColoredOutput("\nDia 26 - Sexta-feira - Último dia da semana.\n\nKarbu Miosa entra alegre na sua sala\n", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Karbu Miosa", "Ufa! Finalmente acabaram os currículos! Como você foi de grande ajuda, vou pegar leve!");
+
+            simulacaoCarregamento();
+
+            printColoredOutput("\nDesafio Semanal!\n", RED_BOLD_BRIGHT);
+
+            quantidadeTentativas = 1;
+            acertou = false;
+            do {
+                System.out.println("\nA respeito de administração financeira e relações humanas, julgue o item.\n" +
+                        "\n" +
+                        "A teoria das relações humanas introduziu um novo repertório na linguagem administrativa, no qual\n" +
+                        "constam motivação, liderança, comunicação, organização informal, dinâmica de grupo etc.");
+
+                System.out.println("______________________________\n");// 30
+                System.out.println("a) Certo.");
+                System.out.println("b) Errado.");
+
+                System.out.println("------------------------------\n");
+                System.out.println("Escolha a alternativa digitando entre A e B:\n ");
+                System.out.println("------------------------------\n");
+
+                String resposta = entrada.next();
+                System.out.println("\n------------------------------\n");// 30
+
+                switch (resposta) {
+                    case "a":
+                    case "A":
+                        System.out.println("Resposta Correta!");
+                        acertou = true;
+                        break;
+
+                    case "b":
+                    case "B":
+                        System.out.println("Resposta Incorreta!!\nTentativa:" + quantidadeTentativas + "/3\n");
+                        quantidadeTentativas++;
+                        break;
+
+                    default:
+                        System.out.println("Resposta inválida!\nTentativa: " + quantidadeTentativas + "/3\n");
+                        System.out.println("______________________________\n");
+                        quantidadeTentativas++;
+                }
+
+            } while (!acertou && quantidadeTentativas <= 3);
+
+            if (!acertou) {
+                caixaDialogoAutomatico("Karbu Miosa", "Infelizmente não podemos te manter na empresa...\n" +
+                        "Espero que entenda...");
+
+                printStringWithIntervalsPerChar("Você não se provou apto a continuar\n\n");
+                printStringWithIntervalsPerChar(" ██████   █████  ███    ███ ███████      ██████  ██    ██ ███████ ██████  ██ \n" +
+                        "██       ██   ██ ████  ████ ██          ██    ██ ██    ██ ██      ██   ██ ██ \n" +
+                        "██   ███ ███████ ██ ████ ██ █████       ██    ██ ██    ██ █████   ██████  ██ \n" +
+                        "██    ██ ██   ██ ██  ██  ██ ██          ██    ██  ██  ██  ██      ██   ██    \n" +
+                        " ██████  ██   ██ ██      ██ ███████      ██████    ████   ███████ ██   ██ ██", 100);
+                return;
+            }
+
+            caixaDialogoAutomatico("Karbu Miosa", "Essa tava bem fácil!");
+
+            printColoredOutput("Você chega em casa e dorme o final de semana inteiro por conta do cansaço.\n",RED_BOLD_BRIGHT);
+
+            printStringWithIntervalsPerCharWithColor("Dia 28 - Semana 4 - Finalizada!\n\n", RED_BOLD_BRIGHT);
 
             simulacaoCarregamento();
 
@@ -452,20 +646,99 @@ public class Main {
              ============================================================================
              */
 
-            printStringWithIntervalsPerCharWithColor("\n\nSemana 5 - 8:00 A.M. \n", RED_BOLD_BRIGHT);
+            printStringWithIntervalsPerCharWithColor("\n\nDia 29 - Semana da entrevista - 8:00 A.M. \n", RED_BOLD_BRIGHT);
+            printStringWithIntervalsPerCharWithColor("Restam 2 dias para sua entrevista\n\n", RED_BOLD_BRIGHT);
 
-            for (int i = 0; i <= 4; i++) {
+            caixaDialogoAutomatico("Secretária", "Woba, acabei de sair da minha entrevista! Agora sou supervisora!\n" +
+                    "Vou cuidar das novas secretárias que vierem ^^\n" +
+                    "Ah! Eu percebi que nunca me apresentei pra você...\n" +
+                    "Me chamo Bellediel Melran, prazer!");
+
+            printColoredOutput("Você comemora a conquista de Bellediel!\n", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Bellediel Melran", "Acho melhor você ir pra sua sala agora. Bom trabalho!");
+
+            printColoredOutput("Ao caminhar pra sua sala você vê que muitos monstros estão chorando e poucos comemorando.", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Karbu Miosa", "Novato, amanhã será minha entrevista. Espero ir bem...\n" +
+                    "Parece que muitos monstros foram demitidos por ir mal...");
+
+            printColoredOutput("Karbu Miosa sai caminhando com uma aura desanimada...", RED_BOLD_BRIGHT);
+
                 System.out.printf("\n===================================================================================\n" +
-                        "Objetivo semanal: %d/5\n", i);
+                        "Objetivo semanal: passar na entrevista\n");
                 geradorDeCurrículo();
                 aceitarCurrículo();
-            }
 
-            printStringWithIntervalsPerCharWithColor("Semana 5 - Finalizada!\n\n", RED_BOLD_BRIGHT);
+                simulacaoCarregamento();
+
+            printStringWithIntervalsPerCharWithColor("\n\nDia 30 - Semana da entrevista - 8:00 A.M. \n", RED_BOLD_BRIGHT);
+            printStringWithIntervalsPerCharWithColor("Resta 1 dia para sua entrevista\n\n", RED_BOLD_BRIGHT);
+
+            printColoredOutput("Você não vê mais Karbu andando e rindo maléficamente pelos corredores\n" +
+                    "Muitos monstros estão chorando, outros estão caídos no chão desacreditados e pouquíssimos comemoram...", RED_BOLD_BRIGHT);
+
+            System.out.printf("\n===================================================================================\n" +
+                    "Objetivo diário: não chorar no banheiro e evitar crises de ansiedade\n");
+            geradorDeCurrículo();
+            aceitarCurrículo();
 
             simulacaoCarregamento();
 
-            /*
+            printStringWithIntervalsPerCharWithColor("\n\nDia 31 - Semana da entrevista - 8:00 A.M. \n", RED_BOLD_BRIGHT);
+            printStringWithIntervalsPerCharWithColor("Restam 3 horas para sua entrevista\n\n", RED_BOLD_BRIGHT);
+
+            printColoredOutput("O clima está péssimo. A empresa demitiu mais de 50 funcionários e outros 50 sumiram minutos antes de fazer a entrevista...\n",RED_BOLD_BRIGHT);
+
+            printColoredOutput("Você caminha pelo corredor e está tudo em câmera lenta\n",RED_BOLD_BRIGHT);
+
+            printColoredOutput("Sua noção de tempo vai sumindo e cada minuto parece uma eternidade\n",RED_BOLD_BRIGHT);
+
+            printColoredOutput("Você sente seu estômago embrulhar e corre para o banheiro.\n",RED_BOLD_BRIGHT);
+
+            printColoredOutput("Você olha para o relógio e percebe que ainda não se passaram nem 20 minutos.\n",RED_BOLD_BRIGHT);
+
+            printColoredOutput("Sua sala parece apertada, quente, desconfortável e cinza.\n",RED_BOLD_BRIGHT);
+
+            printColoredOutput("Você pega o primeiro currículo do dia.\n",RED_BOLD_BRIGHT);
+
+            System.out.printf("\n===================================================================================\n" +
+                    "Objetivo diário: ?????\n");
+            geradorDeCurrículo();
+            aceitarCurrículo();
+
+            printStringWithIntervalsPerCharWithColor("Restam 2 horas para sua entrevista\n\n", RED_BOLD_BRIGHT);
+
+            System.out.printf("\n===================================================================================\n" +
+                    "Objetivo ??????: ?????\n");
+            geradorDeCurrículo();
+            aceitarCurrículo();
+
+            printStringWithIntervalsPerCharWithColor("Resta 1 hora para sua entrevista\n\n", RED_BOLD_BRIGHT);
+
+            System.out.printf("\n===================================================================================\n" +
+                    "????????? ??????: ?????\n");
+            geradorDeCurrículo();
+            aceitarCurrículo();
+
+            printStringWithIntervalsPerCharWithColor("Restam 30 minutos para sua entrevista\n\n", RED_BOLD_BRIGHT);
+
+            System.out.printf("\n??????????????????????????????????????????????????????????????????????????????????????\n" +
+                    "????????? ??????: ?????\n");
+            geradorDeCurrículo();
+            aceitarCurrículo();
+
+            printStringWithIntervalsPerCharWithColor("Restam 10 minutos para sua entrevista\n\n", RED_BOLD_BRIGHT);
+
+            printStringWithIntervalsPerCharWithColor("Você caminha lentamente até a sala do Raku Avaror\n" +
+                    "Durante sua caminhada, você vê monstros chorando e gritando de desespero.\n" +
+                    "Ao fundo você escuta a risada de Raku \"Hohohohohohoh!!\"\n\n", RED_BOLD_BRIGHT);
+
+            printStringWithIntervalsPerCharWithColor("Você abre lentamente a porta da sala e entra bem devagar...\n\n", RED_BOLD_BRIGHT);
+
+            simulacaoCarregamento();
+
+                        /*
             ============================================================================
                                       ___    ___    ___   ___
                                      | _ )  / _ \  / __| / __|
@@ -474,7 +747,73 @@ public class Main {
              ============================================================================
              */
 
-            boss1();
+            printColoredOutput("\nHORA DA ENTREVISTA!!!", RED_BOLD_BRIGHT);
+
+            caixaDialogoAutomatico("Raku Avaror", "Hohohohoh! Tudo certo?? Chegou a hora da sua entrevista!\n" +
+                    "Sente-se aí! Vamos começar!");
+
+            simulacaoCarregamento();
+            System.out.println(" ");
+
+            int pontos=boss();
+
+            if(pontos==10){
+
+caixaDialogoAutomatico("Raku Avaror", "Parece que você acertou tudo! Você provou merecer uma promoção!\n" +
+        "Como Karbu Miosa foi demitido, você vai tomar o lugar dele de gerente!\n" +
+        "Parabéns!!");
+
+printColoredOutput("Você sai da sala feliz e tranquilo e decide contar a novidade para Bellediel Melran.", RED_BOLD_BRIGHT);
+
+caixaDialogoAutomatico("Bellediel Melran", "Aaaaaaaaaaaaaaaa! Que demais!!! E pensar que você está aqui há tão pouco tempo!!\n" +
+        "Você merece demais esse cargo. Você sempre se dedicou bastante!");
+
+printColoredOutput("Você sorri e abraça Bellediel Melran", RED_BOLD_BRIGHT);
+
+caixaDialogoAutomatico("Bellediel Melran", "Te vejo amanhã, novo gerente! ^^");
+
+                printStringWithIntervalsPerCharWithColor("Semana 5 - Finalizada!\n\n", RED_BOLD_BRIGHT);
+
+                printStringWithIntervalsPerChar("███████ ██ ███    ███     ██████  ███████          ██  ██████   ██████   ██████  \n" +
+                        "██      ██ ████  ████     ██   ██ ██               ██ ██    ██ ██       ██    ██ \n" +
+                        "█████   ██ ██ ████ ██     ██   ██ █████            ██ ██    ██ ██   ███ ██    ██ \n" +
+                        "██      ██ ██  ██  ██     ██   ██ ██          ██   ██ ██    ██ ██    ██ ██    ██ \n" +
+                        "██      ██ ██      ██     ██████  ███████      █████   ██████   ██████   ██████  ", 100);
+
+            }else if(pontos>=6 && pontos<=8){
+                caixaDialogoAutomatico("Raku Avaror", "Parabéns! Você me surpreendeu!\n" +
+                        "Você provou merecer continuar aqui dentro!");
+
+                printColoredOutput("Você sai da sala feliz e tranquilo e decide ver a Bellediel Melran.", RED_BOLD_BRIGHT);
+
+                caixaDialogoAutomatico("Bellediel Melran", "Aaaaaaaaaaaaaaaa! Que demais!!! Então você continua aqui com a gente!!\n" +
+                        "Pena que não foi promovido... Mas pense pelo lado bom. Você continua aqui na empresa!!");
+
+                printColoredOutput("Você sorri e abraça Bellediel Melran", RED_BOLD_BRIGHT);
+
+                caixaDialogoAutomatico("Bellediel Melran", "Te vejo amanhã, " +fullNameJogador +"! ^^");
+
+                printStringWithIntervalsPerCharWithColor("Semana 5 - Finalizada!\n\n", RED_BOLD_BRIGHT);
+
+                printStringWithIntervalsPerChar("███████ ██ ███    ███     ██████  ███████          ██  ██████   ██████   ██████  \n" +
+                        "██      ██ ████  ████     ██   ██ ██               ██ ██    ██ ██       ██    ██ \n" +
+                        "█████   ██ ██ ████ ██     ██   ██ █████            ██ ██    ██ ██   ███ ██    ██ \n" +
+                        "██      ██ ██  ██  ██     ██   ██ ██          ██   ██ ██    ██ ██    ██ ██    ██ \n" +
+                        "██      ██ ██      ██     ██████  ███████      █████   ██████   ██████   ██████  ", 100);
+
+            }else{
+                caixaDialogoAutomatico("Raku Avaror", "Infelizmente não podemos te manter na empresa...\n" +
+                        "Você não atingiu a pontuação mínima...\n" +
+                        "Espero que entenda...");
+
+                printStringWithIntervalsPerChar("Você não se provou apto a continuar na empresa\n\n");
+                printStringWithIntervalsPerChar(" ██████   █████  ███    ███ ███████      ██████  ██    ██ ███████ ██████  ██ \n" +
+                        "██       ██   ██ ████  ████ ██          ██    ██ ██    ██ ██      ██   ██ ██ \n" +
+                        "██   ███ ███████ ██ ████ ██ █████       ██    ██ ██    ██ █████   ██████  ██ \n" +
+                        "██    ██ ██   ██ ██  ██  ██ ██          ██    ██  ██  ██  ██      ██   ██    \n" +
+                        " ██████  ██   ██ ██      ██ ███████      ██████    ████   ███████ ██   ██ ██", 100);
+            }
+
         }
     }
 
@@ -503,7 +842,7 @@ public class Main {
                 "IDADE: \n176 anos" +
                 "\n" +
                 "\n" +
-                "OBJETIVO:\nAprimorar meus conhecimentos de susto e assustar o máximo de pessoas que eu pudar para ajudar no crescimento da empresa." +
+                "OBJETIVO:\nAprimorar meus conhecimentos de susto e assustar o máximo de pessoas que eu puder para ajudar no crescimento da empresa." +
                 "\n" +
                 "\n" +
                 "CARACTERÍSTICAS:\n- Assustador,\n- Dentes afiados,\n- Grande." +
@@ -545,7 +884,7 @@ public class Main {
                 "IDADE: \n231 anos" +
                 "\n" +
                 "\n" +
-                "OBJETIVO:\nAprimorar meus conhecimentos de susto e assustar o máximo de pessoas que eu pudar para ajudar no crescimento da empresa." +
+                "OBJETIVO:\nAprimorar meus conhecimentos de susto e assustar o máximo de pessoas que eu puder para ajudar no crescimento da empresa." +
                 "\n" +
                 "\n" +
                 "CARACTERÍSTICAS:\n- Baixo,\n- Medroso." +
@@ -721,453 +1060,124 @@ public class Main {
     }
 
     // Boss 1 (com 5 questões)
-    static void boss1() {
+    static int boss() {
 
-        Scanner input = new Scanner(System.in);
+        int quantidadePontosTotal=0;
 
-        int cont = 1;
+// ============================== Questao 1 ============================== //
 
-        boolean acertou = false;
+        String enunciadoQuestao1 = "Considere as afirmações abaixo sobre as escolas da Administração.\n" +
+                "\n" +
+                "I - Para Taylor, a organização e a Administração devem ser estudadas e tratadas cientificamente, para possibilitar a execução dos trabalhos com máxima produção a mínimo custo.\n" +
+                "II - Henry Ford é um dos responsáveis pelo elevado grau de desenvolvimento da atual organização empresarial, no que diz respeito às peças padronizadas e ao trabalhador especializado.\n" +
+                "III- Para Max Weber, as organizações formais, apresentam três características que formam o tipo ideal da burocracia: formalidade, impessoalidade e profissionalismo.\n" +
+                "IV - Dentre os princípios de administração abordados por Fayol, destacam-se: divisão do trabalho, disciplina, interesse individual, importância na descentralização e a existência da dualidade de comando.\n" +
+                "\nQuais estão corretas?";
+        List<String> alternativasQuestao1 = Arrays.asList(
+                "Apenas I e II.",
+                "Apenas III e IV.",
+                "Apenas I, II e III.",
+                "Apenas I e IV.",
+                "I, II, III e IV.");
+        String alternativaCorretaQuestao1 = "Apenas I, II e III.";
 
-        List quest = new ArrayList();
+        quantidadePontosTotal = quantidadePontosTotal + printaQuestaoAlternativa(enunciadoQuestao1, alternativasQuestao1, alternativaCorretaQuestao1);
 
-        quest.add("Depende do tamanho do porta-malas\n");// Questão correta
-        quest.add("Uma grande bolinha de tênis\n");
-        quest.add("Eu não sei\n");
-        quest.add("Talvez... 50 mil bolinhas...\n");
+        // ============================== Questao 2 ============================== //
 
-        // Quetão 1
+        String enunciadoQuestao2 = "Ênfase na estrutura organizacional é característica da teoria:\n" +
+                "\nAlternativas:";
+        List<String> alternativasQuestao2 = Arrays.asList(
+                "contingencial.",
+                "clássica",
+                "de sistemas",
+                "das relações humanas",
+                "comportamental.");
+        String alternativaCorretaQuestao2 = "clássica";
 
+        quantidadePontosTotal = quantidadePontosTotal +printaQuestaoAlternativa(enunciadoQuestao2, alternativasQuestao2, alternativaCorretaQuestao2);
+
+        // ============================== Questao 3 ============================== //
+
+        String enunciadoQuestao3 = "Para Henri Fayol, as funções que coordenam e sincronizam as demais funções da empresa, pairando sempre acima delas, são as:\n" +
+                "\nAlternativas:";
+        List<String> alternativasQuestao3 = Arrays.asList(
+                "técnicas.",
+                "administrativas",
+                "financeiras",
+                "comerciais",
+                "contábeis.");
+        String alternativaCorretaQuestao3 = "administrativas";
+
+        quantidadePontosTotal = quantidadePontosTotal +printaQuestaoAlternativa(enunciadoQuestao3, alternativasQuestao3, alternativaCorretaQuestao3);
+
+        // ============================== Questao 4 ============================== //
+
+        String enunciadoQuestao4 = "Qual princípio da Administração, segundo Fayol, consiste na especialização das tarefas e das pessoas para aumentar a eficiência?:\n" +
+                "\nAlternativas:";
+        List<String> alternativasQuestao4 = Arrays.asList(
+                "Autoridade e responsabilidade.",
+                "Divisão do trabalho",
+                "Centralização",
+                "Espirito de equipe",
+                "Unidade de direção.");
+        String alternativaCorretaQuestao4 = "Divisão do trabalho";
+
+        quantidadePontosTotal = quantidadePontosTotal +printaQuestaoAlternativa(enunciadoQuestao4, alternativasQuestao4, alternativaCorretaQuestao4);
+
+        // ============================== Questao 5 ============================== //
+
+        String enunciadoQuestao5 = "Enquanto a Administração Científica se caracterizava pela ênfase na tarefa realizada pelo operário/colaborador, a Teoria Clássica tinha por característica:\n" +
+                "\nAlternativas:";
+        List<String> alternativasQuestao5 = Arrays.asList(
+                "a necessidade que as organizações sentiram de ordem e de exatidão e das reivindicações dos trabalhadores por um tratamento justo e imparcial.",
+                "a preocupação psicológica e sociológica quanto à influência massificante da civilização industrial sobre o ser humano.",
+                "a ênfase na estrutura que a organização deveria possuir para ser eficiente.",
+                "a ênfase nas pessoas que trabalham ou que participam nas organizações.",
+                "o enfoque nos resultados e objetivos alcançados (fins) por meio do controle de todos os aspectos de produção..");
+        String alternativaCorretaQuestao5 = "a ênfase na estrutura que a organização deveria possuir para ser eficiente.";
+
+        quantidadePontosTotal = quantidadePontosTotal +printaQuestaoAlternativa(enunciadoQuestao5, alternativasQuestao5, alternativaCorretaQuestao5);
+
+return quantidadePontosTotal;
+    }
+
+    public static int printaQuestaoAlternativa(String questao, List<String> listAlternativas, String alternativaCorreta) {
+        List<Character> listNumeracaoAlternativa = Arrays.asList('A', 'B', 'C', 'D', 'E');
+        int quantidadeTentativas = 0;
+        boolean acertouQuestao = false;
         do {
 
-            Collections.shuffle(quest);
+            // Shuffle nas alternativas
+            Collections.shuffle(listAlternativas);
 
-            System.out.println("\n1) Hohoh! Quantas bolinhas de tênis caberiam dentro de uma limousine?");
-            System.out.println("______________________________\n");// 30
+            // Printa Questao
+            System.out.println(questao);
 
-            System.out.println("a) " + quest.get(0));
-
-            System.out.println("b) " + quest.get(1));
-
-            System.out.println("c) " + quest.get(2));
-
-            System.out.println("d) " + quest.get(3));
-
-            System.out.println("------------------------------\n");
-            System.out.println("Escolha a alternativa digitando entra A e D:\n ");
-            System.out.println("------------------------------\n");
-
-            String resposta = input.next();
-            System.out.println("\n------------------------------\n");// 30
-
-            switch (resposta) {
-                case "a":
-                case "A":
-                    if (quest.get(0).equals("Depende do tamanho do porta-malas\n" + cont)) {
-                        System.out.println("Resposta correta! \nTentativa: " + cont + "/3");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!\nTentativa: " + cont + "/3\n");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "b":
-                case "B":
-                    if (quest.get(1).equals("Depende do tamanho do porta-malas\n")) {
-                        System.out.println("Resposta correta!\nTentativa" + cont + "/3\n");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!\nTentativa: " + cont + "/3\n");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "c":
-                case "C":
-                    if (quest.get(2).equals("Depende do tamanho do porta-malas\n")) {
-                        System.out.println("Resposta correta!\nTentativa: " + cont + "/3\n");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!\nTentativa: " + cont + "/3\n");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "d":
-                case "D":
-                    if (quest.get(3).equals("Depende do tamanho do porta-malas\n")) {
-                        System.out.println("Resposta correta!\nTetativa: " + cont + "/3\n");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!\nTentativa: " + cont + "/3\n");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                default:
-                    System.out.println("Resposta inválida!\nTentativa: " + cont + "/3\n");
-                    System.out.println("______________________________\n");// 30
+            // Printa alternativas
+            for (int i = 0; i < listAlternativas.size(); i++) {
+                System.out.println(listNumeracaoAlternativa.get(i) + ") " + listAlternativas.get(i));
             }
 
-        } while (!acertou && cont < 3);
+            // Captura resposta
+            System.out.print("\nEscolha a alternativa: ");
+            Scanner input = new Scanner(System.in);
+            char resposta = input.next().toUpperCase(Locale.ROOT).charAt(0);
+            int indiceAlterantivaEscolhida = listNumeracaoAlternativa.indexOf(resposta);
 
-        // Quetão 2
-
-        List quest2 = new ArrayList();
-
-        quest2.add("Me vestiria como uma abelha e diria que transportaria o mel para a rainha.\n");// Questão correta
-        quest2.add("Por qual motivo eu faria isso se sou alérgico á abelhas?\n");
-        quest2.add("Tentaria assustar as abelhas e ficaria com todo o mel.\n");
-        quest2.add("Não quero correr o risco de ser picado!\n");
-
-        do {
-
-            Collections.shuffle(quest2);
-
-            System.out.println("2) Hohoh! O que você faria para roubar uma grande colmeia de abelhas para obter mel?");
-            System.out.println("______________________________\n");// 30
-
-            System.out.println("a) " + quest2.get(0));
-
-            System.out.println("b) " + quest2.get(1));
-
-            System.out.println("c) " + quest2.get(2));
-
-            System.out.println("d) " + quest2.get(3));
-
-            System.out.println("------------------------------\n");
-            System.out.println("Escolha a alternativa digitando entra A e D:\n ");
-            System.out.println("------------------------------\n");
-
-            String resposta = input.next();
-            System.out.println("\n------------------------------\n");// 30
-
-            switch (resposta) {
-                case "a":
-                case "A":
-                    if (quest2.get(0)
-                            .equals("Me vestiria como uma abelha e diria que transportaria o mel para a rainha.\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "b":
-                case "B":
-                    if (quest2.get(1)
-                            .equals("Me vestiria como uma abelha e diria que transportaria o mel para a rainha.\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "c":
-                case "C":
-                    if (quest2.get(2)
-                            .equals("Me vestiria como uma abelha e diria que transportaria o mel para a rainha.\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "d":
-                case "D":
-                    if (quest2.get(3)
-                            .equals("Me vestiria como uma abelha e diria que transportaria o mel para a rainha.\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                default:
-                    System.out.println("Resposta inválida!");
-                    System.out.println("______________________________\n");// 30
+            if (indiceAlterantivaEscolhida == -1) {
+                System.out.println("Resposta nao esta entre as opcoes!!! Preste mais atenção.");
+            } else if ( listAlternativas.get(indiceAlterantivaEscolhida).equals(alternativaCorreta) ) {
+                System.out.println("ACERTOU");
+                acertouQuestao = true;
+                return 2;
+            } else {
+                System.out.println("ERROU");
+                quantidadeTentativas++;
             }
 
-        } while (!acertou && cont < 3);
-
-        if (acertou) {
-            System.out.println("Você acertou na " + cont + " tentativa!");
-            System.out.println("\n______________________________\n");// 30
-        } else {
-            System.out.println("Você errou nas 3 chances!");
-        }
-
-        // Quetão 3
-
-        List quest3 = new ArrayList();
-
-        quest3.add("...\n");// Questão correta
-        quest3.add("...1\n");
-        quest3.add("...2\n");
-        quest3.add("...3\n");
-
-        do {
-
-            Collections.shuffle(quest3);
-
-            System.out.println("3) ...");
-            System.out.println("______________________________\n");// 30
-
-            System.out.println("a) " + quest3.get(0));
-
-            System.out.println("b) " + quest3.get(1));
-
-            System.out.println("c) " + quest3.get(2));
-
-            System.out.println("d) " + quest3.get(3));
-
-            System.out.println("------------------------------\n");
-            System.out.println("Escolha a alternativa digitando entra A e D:\n ");
-            System.out.println("------------------------------\n");
-
-            String resposta = input.next();
-            System.out.println("\n------------------------------\n");// 30
-
-            switch (resposta) {
-                case "a":
-                case "A":
-                    if (quest3.get(0).equals("...\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "b":
-                case "B":
-                    if (quest3.get(1).equals("...\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "c":
-                case "C":
-                    if (quest3.get(2).equals("...\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "d":
-                case "D":
-                    if (quest3.get(3).equals("...\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                default:
-                    System.out.println("Resposta inválida!");
-                    System.out.println("______________________________\n");// 30
-            }
-
-        } while (!acertou && cont < 3);
-
-        if (acertou) {
-            System.out.println("Você acertou na " + cont + " tentativa!");
-            System.out.println("\n______________________________\n");// 30
-        } else {
-            System.out.println("Você errou nas 3 chances!");
-        }
-
-        // Quetão 4
-
-        List quest4 = new ArrayList();
-
-        quest4.add("...\n");// Questão correta
-        quest4.add("...1\n");
-        quest4.add("...2\n");
-        quest4.add("...3\n");
-
-        do {
-
-            Collections.shuffle(quest4);
-
-            System.out.println("4) ...");
-            System.out.println("______________________________\n");// 30
-
-            System.out.println("a) " + quest4.get(0));
-
-            System.out.println("b) " + quest4.get(1));
-
-            System.out.println("c) " + quest4.get(2));
-
-            System.out.println("d) " + quest4.get(3));
-
-            System.out.println("------------------------------\n");
-            System.out.println("Escolha a alternativa digitando entra A e D:\n ");
-            System.out.println("------------------------------\n");
-
-            String resposta = input.next();
-            System.out.println("\n------------------------------\n");// 30
-
-            switch (resposta) {
-                case "a":
-                case "A":
-                    if (quest4.get(0).equals("...\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "b":
-                case "B":
-                    if (quest4.get(1).equals("...\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "c":
-                case "C":
-                    if (quest4.get(2).equals("...\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "d":
-                case "D":
-                    if (quest4.get(3).equals("...\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                default:
-                    System.out.println("Resposta inválida!");
-                    System.out.println("______________________________\n");// 30
-            }
-
-        } while (!acertou && cont < 3);
-
-        if (acertou) {
-            System.out.println("Você acertou na " + cont + " tentativa!");
-            System.out.println("\n______________________________\n");// 30
-        } else {
-            System.out.println("Você errou nas 3 chances!");
-        }
-
-        // Quetão 5
-
-        List quest5 = new ArrayList();
-
-        quest5.add("...\n");// Questão correta
-        quest5.add("...1\n");
-        quest5.add("...2\n");
-        quest5.add("...3\n");
-
-        do {
-
-            Collections.shuffle(quest5);
-
-            System.out.println("4) ...");
-            System.out.println("______________________________\n");// 30
-
-            System.out.println("a) " + quest5.get(0));
-
-            System.out.println("b) " + quest5.get(1));
-
-            System.out.println("c) " + quest5.get(2));
-
-            System.out.println("d) " + quest5.get(3));
-
-            System.out.println("------------------------------\n");
-            System.out.println("Escolha a alternativa digitando entra A e D:\n ");
-            System.out.println("------------------------------\n");
-
-            String resposta = input.next();
-            System.out.println("\n------------------------------\n");// 30
-
-            switch (resposta) {
-                case "a":
-                case "A":
-                    if (quest5.get(0).equals("...\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "b":
-                case "B":
-                    if (quest5.get(1).equals("...\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "c":
-                case "C":
-                    if (quest5.get(2).equals("...\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                case "d":
-                case "D":
-                    if (quest5.get(3).equals("...\n")) {
-                        System.out.println("Resposta correta!");
-                        acertou = true;
-                    } else {
-                        System.out.println("Resposta incorreta!");
-                        System.out.println("______________________________\n");// 30
-                    }
-                    break;
-
-                default:
-                    System.out.println("Resposta inválida!");
-                    System.out.println("______________________________\n");// 30
-            }
-
-        } while (!acertou && cont < 3);
+        } while(!acertouQuestao && quantidadeTentativas < 3);
+        return 0;
     }
 
     /*
@@ -1218,7 +1228,7 @@ public class Main {
     //TODO adicionar mais objetivos
     static String sorteadorObjetivos() {
         ArrayList<String> listaObjetivos = new ArrayList<>(Arrays.asList(
-                "Aprimorar meus conhecimentos de susto e assustar o máximo de pessoas que eu pudar para ajudar no crescimento da empresa.",
+                "Aprimorar meus conhecimentos de susto e assustar o máximo de pessoas que eu puder para ajudar no crescimento da empresa.",
                 "Focar no meu crescimento pessoal e fazer de tudo para me tornar o chefe.",
                 "Assustar todas as pessoas existente para crescer a empresa e aumentar meus conhecimento e habilidades.",
                 "Adquirir novas habilidades e aprimorar as que já tenho.",
@@ -1234,8 +1244,7 @@ public class Main {
     static String sorteadorCaracteristicas() {
         ArrayList<String> listaCaracteristicas = new ArrayList<>(Arrays.asList(
                 "Assustador", "Grande", "Inteligente", "Timido",
-                "Estressado", "Assustado", "Fofo", "Medroso", "Carismático", "Aventureiro", "Peludo", "Escamoso", "Feio",
-                "Estiloso", "Bonito", "Alto", "Baixo", "Quadrúpede", "Bípede", "Dentes afiados"
+                "Estressado", "Assustado", "Carinhoso", "Medroso", "Carismático", "Aventureiro", "Peludo", "Escamoso", "Feio", "Quadrúpede", "Dentes afiados"
         ));
         Collections.shuffle(listaCaracteristicas);
 
